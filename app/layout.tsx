@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Lora, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
@@ -35,7 +36,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="de" className={`${lora.variable} ${plusJakartaSans.variable}`}>
-      <body className="font-ui">{children}</body>
+      <body className="font-ui">
+        {children}
+        <SpeedInsights />
+      </body>
     </html>
   );
 }
