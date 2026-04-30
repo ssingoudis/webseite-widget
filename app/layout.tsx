@@ -21,16 +21,20 @@ export const metadata: Metadata = {
   title: "SingoTec — Mehr Anfragen für Handwerksbetriebe",
   description:
     "Individuelle Lead-Widgets für Handwerksbetriebe — DSGVO-konform, einsatzbereit in unter 48h, kostenlos eingerichtet.",
+  icons: {
+    icon: [
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="de"
-      className={`${lora.variable} ${plusJakartaSans.variable}`}
-    >
+    <html lang="de" className={`${lora.variable} ${plusJakartaSans.variable}`}>
       <body className="font-ui">{children}</body>
     </html>
   );
