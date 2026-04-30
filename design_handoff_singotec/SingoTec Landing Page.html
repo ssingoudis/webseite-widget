@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SingoTec — Mehr Anfragen für Handwerksbetriebe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <style>
+/* ============================================================
+   Violet Bloom Design System — Colors & Typography Tokens
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+/* ── Base Color Palette ───────────────────────────────────── */
+:root {
+  --color-primary:          #7033ff;
+  --color-primary-hover:    #5a20e8;
+  --color-primary-light:    #9a6bff;
+  --color-primary-faint:    #ede5ff;
+
+  --color-accent:           #e2ebff;
+  --color-accent-hover:     #cdd9ff;
+
+  --color-bg:               #fdfdfd;
+  --color-surface:          #ffffff;
+  --color-secondary:        #edf0f4;
+  --color-border:           #e7e7ee;
+  --color-border-focus:     #7033ff;
+  --color-divider:          #edf0f4;
+
+  --color-fg:               #000000;
+  --color-fg-2:             #3a3a4a;
+  --color-fg-3:             #6b6b80;
+  --color-fg-4:             #a0a0b8;
+
+  --color-destructive:      #e54b4f;
+  --color-destructive-bg:   #fef2f2;
+
+  --color-success:          #1aab65;
+  --color-success-bg:       #f0fdf6;
+  --color-warning:          #f59e0b;
+  --color-warning-bg:       #fffbeb;
+
+  /* ── Semantic Aliases ───────────────────────────────────── */
+  --bg:                     var(--color-bg);
+  --surface:                var(--color-surface);
+  --fg:                     var(--color-fg);
+  --fg-muted:               var(--color-fg-3);
+  --fg-subtle:              var(--color-fg-4);
+  --border:                 var(--color-border);
+  --brand:                  var(--color-primary);
+
+  /* ── Shadows ────────────────────────────────────────────── */
+  --shadow-sm:              0 1px 2px rgba(0,0,0,0.08);
+  --shadow-default:         0 2px 3px rgba(0,0,0,0.2);
+  --shadow-bloom:           0 4px 24px rgba(112,51,255,0.15);
+  --shadow-bloom-lg:        0 8px 48px rgba(112,51,255,0.22);
+  --shadow-focus:           0 0 0 3px rgba(112,51,255,0.3);
+
+  /* ── Border Radius ──────────────────────────────────────── */
+  --radius-xs:              0.25rem;   /*  4px */
+  --radius-sm:              0.6rem;    /* ~10px */
+  --radius-md:              1rem;      /* 16px */
+  --radius-lg:              1.4rem;    /* 22px — default component radius */
+  --radius-xl:              2rem;      /* 32px */
+  --radius-pill:            999px;
+
+  /* ── Spacing Scale ──────────────────────────────────────── */
+  --sp-1:   4px;
+  --sp-2:   8px;
+  --sp-3:   12px;
+  --sp-4:   16px;
+  --sp-5:   20px;
+  --sp-6:   24px;
+  --sp-8:   32px;
+  --sp-10:  40px;
+  --sp-12:  48px;
+  --sp-16:  64px;
+  --sp-24:  96px;
+
+  /* ── Animation ──────────────────────────────────────────── */
+  --ease:          cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-mid:  250ms;
+
+  /* ── Typography ─────────────────────────────────────────── */
+  --font-display:  'Lora', Georgia, serif;
+  --font-ui:       'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono:     'IBM Plex Mono', 'Fira Code', monospace;
+
+  --text-xs:   12px;
+  --text-sm:   14px;
+  --text-base: 16px;
+  --text-md:   18px;
+  --text-lg:   24px;
+  --text-xl:   32px;
+  --text-2xl:  48px;
+  --text-3xl:  64px;
+
+  --leading-tight:  1.2;
+  --leading-snug:   1.35;
+  --leading-normal: 1.55;
+  --leading-loose:  1.75;
+
+  --tracking-tight:  -0.03em;
+  --tracking-normal: 0em;
+  --tracking-wide:   0.04em;
+  --tracking-wider:  0.08em;
+}
+
+/* ── Dark Mode ──────────────────────────────────────────────── */
+[data-theme="dark"], .dark {
+  --color-bg:       #0a0a0c;
+  --color-surface:  #13131a;
+  --color-secondary:#1c1c28;
+  --color-border:   #2a2a3a;
+  --color-divider:  #2a2a3a;
+
+  --color-fg:       #f0f0f8;
+  --color-fg-2:     #c8c8e0;
+  --color-fg-3:     #8888a8;
+  --color-fg-4:     #55556a;
+
+  --color-primary:         #9a6bff;
+  --color-primary-hover:   #b48aff;
+  --color-primary-faint:   #1e1030;
+  --color-accent:          #1e1c3a;
+  --color-accent-hover:    #2a2850;
+
+  --bg:       var(--color-bg);
+  --surface:  var(--color-surface);
+  --fg:       var(--color-fg);
+  --border:   var(--color-border);
+  --brand:    var(--color-primary);
+
+  --shadow-bloom:    0 4px 24px rgba(154,107,255,0.2);
+  --shadow-bloom-lg: 0 8px 48px rgba(154,107,255,0.28);
+  --shadow-focus:    0 0 0 3px rgba(154,107,255,0.4);
+}
+
+/* ── Semantic Typography Elements ───────────────────────────── */
+body {
+  font-family: var(--font-ui);
+  font-size: var(--text-base);
+  color: var(--color-fg);
+  background: var(--color-bg);
+  line-height: var(--leading-normal);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, .h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-fg);
+}
+
+h2, .h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-fg);
+}
+
+h3, .h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 500;
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-fg);
+}
+
+h4, .h4 {
+  font-family: var(--font-ui);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  line-height: var(--leading-snug);
+  color: var(--color-fg);
+}
+
+h5, .h5 {
+  font-family: var(--font-ui);
+  font-size: var(--text-md);
+  font-weight: 600;
+  line-height: var(--leading-snug);
+  color: var(--color-fg);
+}
+
+h6, .h6 {
+  font-family: var(--font-ui);
+  font-size: var(--text-base);
+  font-weight: 600;
+  line-height: var(--leading-normal);
+  color: var(--color-fg);
+}
+
+p, .body {
+  font-family: var(--font-ui);
+  font-size: var(--text-base);
+  font-weight: 400;
+  line-height: var(--leading-normal);
+  color: var(--color-fg-2);
+}
+
+.body-sm {
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  color: var(--color-fg-3);
+}
+
+label, .label {
+  font-family: var(--font-ui);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-fg-2);
+}
+
+.overline {
+  font-family: var(--font-ui);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+code, .code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--color-secondary);
+  color: var(--color-primary);
+  padding: 0.15em 0.4em;
+  border-radius: var(--radius-xs);
+}
+
+pre {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  background: var(--color-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--sp-4) var(--sp-6);
+  overflow-x: auto;
+  line-height: var(--leading-loose);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: opacity var(--duration-fast) var(--ease);
+}
+a:hover { text-decoration: underline; opacity: 0.85; }
+
+/* ── Utility Classes ────────────────────────────────────────── */
+.text-primary   { color: var(--color-primary); }
+.text-muted     { color: var(--color-fg-3); }
+.text-subtle    { color: var(--color-fg-4); }
+.text-destructive { color: var(--color-destructive); }
+.font-display   { font-family: var(--font-display); }
+.font-mono      { font-family: var(--font-mono); }
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-ui); background: var(--color-bg); color: var(--color-fg); -webkit-font-smoothing: antialiased; }
+::selection { background: #4648d4; color: #fff; }
+.overline { font-family: var(--font-ui); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  </style>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+
+// tweaks-panel.jsx
+// Reusable Tweaks shell + form-control helpers.
+//
+// Owns the host protocol (listens for __activate_edit_mode / __deactivate_edit_mode,
+// posts __edit_mode_available / __edit_mode_set_keys / __edit_mode_dismissed) so
+// individual prototypes don't re-roll it. Ships a consistent set of controls so you
+// don't hand-draw <input type="range">, segmented radios, steppers, etc.
+//
+// Usage (in an HTML file that loads React + Babel):
+//
+//   const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+//     "primaryColor": "#D97757",
+//     "fontSize": 16,
+//     "density": "regular",
+//     "dark": false
+//   }/*EDITMODE-END*/;
+//
+//   function App() {
+//     const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+//     return (
+//       <div style={{ fontSize: t.fontSize, color: t.primaryColor }}>
+//         Hello
+//         <TweaksPanel>
+//           <TweakSection label="Typography" />
+//           <TweakSlider label="Font size" value={t.fontSize} min={10} max={32} unit="px"
+//                        onChange={(v) => setTweak('fontSize', v)} />
+//           <TweakRadio  label="Density" value={t.density}
+//                        options={['compact', 'regular', 'comfy']}
+//                        onChange={(v) => setTweak('density', v)} />
+//           <TweakSection label="Theme" />
+//           <TweakColor  label="Primary" value={t.primaryColor}
+//                        onChange={(v) => setTweak('primaryColor', v)} />
+//           <TweakToggle label="Dark mode" value={t.dark}
+//                        onChange={(v) => setTweak('dark', v)} />
+//         </TweaksPanel>
+//       </div>
+//     );
+//   }
+//
+// ─────────────────────────────────────────────────────────────────────────────
+
+const __TWEAKS_STYLE = `
+  .twk-panel{position:fixed;right:16px;bottom:16px;z-index:2147483646;width:280px;
+    max-height:calc(100vh - 32px);display:flex;flex-direction:column;
+    background:rgba(250,249,247,.78);color:#29261b;
+    -webkit-backdrop-filter:blur(24px) saturate(160%);backdrop-filter:blur(24px) saturate(160%);
+    border:.5px solid rgba(255,255,255,.6);border-radius:14px;
+    box-shadow:0 1px 0 rgba(255,255,255,.5) inset,0 12px 40px rgba(0,0,0,.18);
+    font:11.5px/1.4 ui-sans-serif,system-ui,-apple-system,sans-serif;overflow:hidden}
+  .twk-hd{display:flex;align-items:center;justify-content:space-between;
+    padding:10px 8px 10px 14px;cursor:move;user-select:none}
+  .twk-hd b{font-size:12px;font-weight:600;letter-spacing:.01em}
+  .twk-x{appearance:none;border:0;background:transparent;color:rgba(41,38,27,.55);
+    width:22px;height:22px;border-radius:6px;cursor:default;font-size:13px;line-height:1}
+  .twk-x:hover{background:rgba(0,0,0,.06);color:#29261b}
+  .twk-body{padding:2px 14px 14px;display:flex;flex-direction:column;gap:10px;
+    overflow-y:auto;overflow-x:hidden;min-height:0;
+    scrollbar-width:thin;scrollbar-color:rgba(0,0,0,.15) transparent}
+  .twk-body::-webkit-scrollbar{width:8px}
+  .twk-body::-webkit-scrollbar-track{background:transparent;margin:2px}
+  .twk-body::-webkit-scrollbar-thumb{background:rgba(0,0,0,.15);border-radius:4px;
+    border:2px solid transparent;background-clip:content-box}
+  .twk-body::-webkit-scrollbar-thumb:hover{background:rgba(0,0,0,.25);
+    border:2px solid transparent;background-clip:content-box}
+  .twk-row{display:flex;flex-direction:column;gap:5px}
+  .twk-row-h{flex-direction:row;align-items:center;justify-content:space-between;gap:10px}
+  .twk-lbl{display:flex;justify-content:space-between;align-items:baseline;
+    color:rgba(41,38,27,.72)}
+  .twk-lbl>span:first-child{font-weight:500}
+  .twk-val{color:rgba(41,38,27,.5);font-variant-numeric:tabular-nums}
+
+  .twk-sect{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+    color:rgba(41,38,27,.45);padding:10px 0 0}
+  .twk-sect:first-child{padding-top:0}
+
+  .twk-field{appearance:none;width:100%;height:26px;padding:0 8px;
+    border:.5px solid rgba(0,0,0,.1);border-radius:7px;
+    background:rgba(255,255,255,.6);color:inherit;font:inherit;outline:none}
+  .twk-field:focus{border-color:rgba(0,0,0,.25);background:rgba(255,255,255,.85)}
+  select.twk-field{padding-right:22px;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='rgba(0,0,0,.5)' d='M0 0h10L5 6z'/></svg>");
+    background-repeat:no-repeat;background-position:right 8px center}
+
+  .twk-slider{appearance:none;-webkit-appearance:none;width:100%;height:4px;margin:6px 0;
+    border-radius:999px;background:rgba(0,0,0,.12);outline:none}
+  .twk-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;
+    width:14px;height:14px;border-radius:50%;background:#fff;
+    border:.5px solid rgba(0,0,0,.12);box-shadow:0 1px 3px rgba(0,0,0,.2);cursor:default}
+  .twk-slider::-moz-range-thumb{width:14px;height:14px;border-radius:50%;
+    background:#fff;border:.5px solid rgba(0,0,0,.12);box-shadow:0 1px 3px rgba(0,0,0,.2);cursor:default}
+
+  .twk-seg{position:relative;display:flex;padding:2px;border-radius:8px;
+    background:rgba(0,0,0,.06);user-select:none}
+  .twk-seg-thumb{position:absolute;top:2px;bottom:2px;border-radius:6px;
+    background:rgba(255,255,255,.9);box-shadow:0 1px 2px rgba(0,0,0,.12);
+    transition:left .15s cubic-bezier(.3,.7,.4,1),width .15s}
+  .twk-seg.dragging .twk-seg-thumb{transition:none}
+  .twk-seg button{appearance:none;position:relative;z-index:1;flex:1;border:0;
+    background:transparent;color:inherit;font:inherit;font-weight:500;min-height:22px;
+    border-radius:6px;cursor:default;padding:4px 6px;line-height:1.2;
+    overflow-wrap:anywhere}
+
+  .twk-toggle{position:relative;width:32px;height:18px;border:0;border-radius:999px;
+    background:rgba(0,0,0,.15);transition:background .15s;cursor:default;padding:0}
+  .twk-toggle[data-on="1"]{background:#34c759}
+  .twk-toggle i{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;
+    background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.25);transition:transform .15s}
+  .twk-toggle[data-on="1"] i{transform:translateX(14px)}
+
+  .twk-num{display:flex;align-items:center;height:26px;padding:0 0 0 8px;
+    border:.5px solid rgba(0,0,0,.1);border-radius:7px;background:rgba(255,255,255,.6)}
+  .twk-num-lbl{font-weight:500;color:rgba(41,38,27,.6);cursor:ew-resize;
+    user-select:none;padding-right:8px}
+  .twk-num input{flex:1;min-width:0;height:100%;border:0;background:transparent;
+    font:inherit;font-variant-numeric:tabular-nums;text-align:right;padding:0 8px 0 0;
+    outline:none;color:inherit;-moz-appearance:textfield}
+  .twk-num input::-webkit-inner-spin-button,.twk-num input::-webkit-outer-spin-button{
+    -webkit-appearance:none;margin:0}
+  .twk-num-unit{padding-right:8px;color:rgba(41,38,27,.45)}
+
+  .twk-btn{appearance:none;height:26px;padding:0 12px;border:0;border-radius:7px;
+    background:rgba(0,0,0,.78);color:#fff;font:inherit;font-weight:500;cursor:default}
+  .twk-btn:hover{background:rgba(0,0,0,.88)}
+  .twk-btn.secondary{background:rgba(0,0,0,.06);color:inherit}
+  .twk-btn.secondary:hover{background:rgba(0,0,0,.1)}
+
+  .twk-swatch{appearance:none;-webkit-appearance:none;width:56px;height:22px;
+    border:.5px solid rgba(0,0,0,.1);border-radius:6px;padding:0;cursor:default;
+    background:transparent;flex-shrink:0}
+  .twk-swatch::-webkit-color-swatch-wrapper{padding:0}
+  .twk-swatch::-webkit-color-swatch{border:0;border-radius:5.5px}
+  .twk-swatch::-moz-color-swatch{border:0;border-radius:5.5px}
+`;
+
+// ── useTweaks ───────────────────────────────────────────────────────────────
+// Single source of truth for tweak values. setTweak persists via the host
+// (__edit_mode_set_keys → host rewrites the EDITMODE block on disk).
+function useTweaks(defaults) {
+  const [values, setValues] = React.useState(defaults);
+  // Accepts either setTweak('key', value) or setTweak({ key: value, ... }) so a
+  // useState-style call doesn't write a "[object Object]" key into the persisted
+  // JSON block.
+  const setTweak = React.useCallback((keyOrEdits, val) => {
+    const edits = typeof keyOrEdits === 'object' && keyOrEdits !== null
+      ? keyOrEdits : { [keyOrEdits]: val };
+    setValues((prev) => ({ ...prev, ...edits }));
+    window.parent.postMessage({ type: '__edit_mode_set_keys', edits }, '*');
+  }, []);
+  return [values, setTweak];
+}
+
+// ── TweaksPanel ─────────────────────────────────────────────────────────────
+// Floating shell. Registers the protocol listener BEFORE announcing
+// availability — if the announce ran first, the host's activate could land
+// before our handler exists and the toolbar toggle would silently no-op.
+// The close button posts __edit_mode_dismissed so the host's toolbar toggle
+// flips off in lockstep; the host echoes __deactivate_edit_mode back which
+// is what actually hides the panel.
+function TweaksPanel({ title = 'Tweaks', children }) {
+  const [open, setOpen] = React.useState(false);
+  const dragRef = React.useRef(null);
+  const offsetRef = React.useRef({ x: 16, y: 16 });
+  const PAD = 16;
+
+  const clampToViewport = React.useCallback(() => {
+    const panel = dragRef.current;
+    if (!panel) return;
+    const w = panel.offsetWidth, h = panel.offsetHeight;
+    const maxRight = Math.max(PAD, window.innerWidth - w - PAD);
+    const maxBottom = Math.max(PAD, window.innerHeight - h - PAD);
+    offsetRef.current = {
+      x: Math.min(maxRight, Math.max(PAD, offsetRef.current.x)),
+      y: Math.min(maxBottom, Math.max(PAD, offsetRef.current.y)),
+    };
+    panel.style.right = offsetRef.current.x + 'px';
+    panel.style.bottom = offsetRef.current.y + 'px';
+  }, []);
+
+  React.useEffect(() => {
+    if (!open) return;
+    clampToViewport();
+    if (typeof ResizeObserver === 'undefined') {
+      window.addEventListener('resize', clampToViewport);
+      return () => window.removeEventListener('resize', clampToViewport);
+    }
+    const ro = new ResizeObserver(clampToViewport);
+    ro.observe(document.documentElement);
+    return () => ro.disconnect();
+  }, [open, clampToViewport]);
+
+  React.useEffect(() => {
+    const onMsg = (e) => {
+      const t = e?.data?.type;
+      if (t === '__activate_edit_mode') setOpen(true);
+      else if (t === '__deactivate_edit_mode') setOpen(false);
+    };
+    window.addEventListener('message', onMsg);
+    window.parent.postMessage({ type: '__edit_mode_available' }, '*');
+    return () => window.removeEventListener('message', onMsg);
+  }, []);
+
+  const dismiss = () => {
+    setOpen(false);
+    window.parent.postMessage({ type: '__edit_mode_dismissed' }, '*');
+  };
+
+  const onDragStart = (e) => {
+    const panel = dragRef.current;
+    if (!panel) return;
+    const r = panel.getBoundingClientRect();
+    const sx = e.clientX, sy = e.clientY;
+    const startRight = window.innerWidth - r.right;
+    const startBottom = window.innerHeight - r.bottom;
+    const move = (ev) => {
+      offsetRef.current = {
+        x: startRight - (ev.clientX - sx),
+        y: startBottom - (ev.clientY - sy),
+      };
+      clampToViewport();
+    };
+    const up = () => {
+      window.removeEventListener('mousemove', move);
+      window.removeEventListener('mouseup', up);
+    };
+    window.addEventListener('mousemove', move);
+    window.addEventListener('mouseup', up);
+  };
+
+  if (!open) return null;
+  return (
+    <>
+      <style>{__TWEAKS_STYLE}</style>
+      <div ref={dragRef} className="twk-panel" data-noncommentable=""
+           style={{ right: offsetRef.current.x, bottom: offsetRef.current.y }}>
+        <div className="twk-hd" onMouseDown={onDragStart}>
+          <b>{title}</b>
+          <button className="twk-x" aria-label="Close tweaks"
+                  onMouseDown={(e) => e.stopPropagation()}
+                  onClick={dismiss}>✕</button>
+        </div>
+        <div className="twk-body">{children}</div>
+      </div>
+    </>
+  );
+}
+
+// ── Layout helpers ──────────────────────────────────────────────────────────
+
+function TweakSection({ label, children }) {
+  return (
+    <>
+      <div className="twk-sect">{label}</div>
+      {children}
+    </>
+  );
+}
+
+function TweakRow({ label, value, children, inline = false }) {
+  return (
+    <div className={inline ? 'twk-row twk-row-h' : 'twk-row'}>
+      <div className="twk-lbl">
+        <span>{label}</span>
+        {value != null && <span className="twk-val">{value}</span>}
+      </div>
+      {children}
+    </div>
+  );
+}
+
+// ── Controls ────────────────────────────────────────────────────────────────
+
+function TweakSlider({ label, value, min = 0, max = 100, step = 1, unit = '', onChange }) {
+  return (
+    <TweakRow label={label} value={`${value}${unit}`}>
+      <input type="range" className="twk-slider" min={min} max={max} step={step}
+             value={value} onChange={(e) => onChange(Number(e.target.value))} />
+    </TweakRow>
+  );
+}
+
+function TweakToggle({ label, value, onChange }) {
+  return (
+    <div className="twk-row twk-row-h">
+      <div className="twk-lbl"><span>{label}</span></div>
+      <button type="button" className="twk-toggle" data-on={value ? '1' : '0'}
+              role="switch" aria-checked={!!value}
+              onClick={() => onChange(!value)}><i /></button>
+    </div>
+  );
+}
+
+function TweakRadio({ label, value, options, onChange }) {
+  const trackRef = React.useRef(null);
+  const [dragging, setDragging] = React.useState(false);
+  const opts = options.map((o) => (typeof o === 'object' ? o : { value: o, label: o }));
+  const idx = Math.max(0, opts.findIndex((o) => o.value === value));
+  const n = opts.length;
+
+  // The active value is read by pointer-move handlers attached for the lifetime
+  // of a drag — ref it so a stale closure doesn't fire onChange for every move.
+  const valueRef = React.useRef(value);
+  valueRef.current = value;
+
+  const segAt = (clientX) => {
+    const r = trackRef.current.getBoundingClientRect();
+    const inner = r.width - 4;
+    const i = Math.floor(((clientX - r.left - 2) / inner) * n);
+    return opts[Math.max(0, Math.min(n - 1, i))].value;
+  };
+
+  const onPointerDown = (e) => {
+    setDragging(true);
+    const v0 = segAt(e.clientX);
+    if (v0 !== valueRef.current) onChange(v0);
+    const move = (ev) => {
+      if (!trackRef.current) return;
+      const v = segAt(ev.clientX);
+      if (v !== valueRef.current) onChange(v);
+    };
+    const up = () => {
+      setDragging(false);
+      window.removeEventListener('pointermove', move);
+      window.removeEventListener('pointerup', up);
+    };
+    window.addEventListener('pointermove', move);
+    window.addEventListener('pointerup', up);
+  };
+
+  return (
+    <TweakRow label={label}>
+      <div ref={trackRef} role="radiogroup" onPointerDown={onPointerDown}
+           className={dragging ? 'twk-seg dragging' : 'twk-seg'}>
+        <div className="twk-seg-thumb"
+             style={{ left: `calc(2px + ${idx} * (100% - 4px) / ${n})`,
+                      width: `calc((100% - 4px) / ${n})` }} />
+        {opts.map((o) => (
+          <button key={o.value} type="button" role="radio" aria-checked={o.value === value}>
+            {o.label}
+          </button>
+        ))}
+      </div>
+    </TweakRow>
+  );
+}
+
+function TweakSelect({ label, value, options, onChange }) {
+  return (
+    <TweakRow label={label}>
+      <select className="twk-field" value={value} onChange={(e) => onChange(e.target.value)}>
+        {options.map((o) => {
+          const v = typeof o === 'object' ? o.value : o;
+          const l = typeof o === 'object' ? o.label : o;
+          return <option key={v} value={v}>{l}</option>;
+        })}
+      </select>
+    </TweakRow>
+  );
+}
+
+function TweakText({ label, value, placeholder, onChange }) {
+  return (
+    <TweakRow label={label}>
+      <input className="twk-field" type="text" value={value} placeholder={placeholder}
+             onChange={(e) => onChange(e.target.value)} />
+    </TweakRow>
+  );
+}
+
+function TweakNumber({ label, value, min, max, step = 1, unit = '', onChange }) {
+  const clamp = (n) => {
+    if (min != null && n < min) return min;
+    if (max != null && n > max) return max;
+    return n;
+  };
+  const startRef = React.useRef({ x: 0, val: 0 });
+  const onScrubStart = (e) => {
+    e.preventDefault();
+    startRef.current = { x: e.clientX, val: value };
+    const decimals = (String(step).split('.')[1] || '').length;
+    const move = (ev) => {
+      const dx = ev.clientX - startRef.current.x;
+      const raw = startRef.current.val + dx * step;
+      const snapped = Math.round(raw / step) * step;
+      onChange(clamp(Number(snapped.toFixed(decimals))));
+    };
+    const up = () => {
+      window.removeEventListener('pointermove', move);
+      window.removeEventListener('pointerup', up);
+    };
+    window.addEventListener('pointermove', move);
+    window.addEventListener('pointerup', up);
+  };
+  return (
+    <div className="twk-num">
+      <span className="twk-num-lbl" onPointerDown={onScrubStart}>{label}</span>
+      <input type="number" value={value} min={min} max={max} step={step}
+             onChange={(e) => onChange(clamp(Number(e.target.value)))} />
+      {unit && <span className="twk-num-unit">{unit}</span>}
+    </div>
+  );
+}
+
+function TweakColor({ label, value, onChange }) {
+  return (
+    <div className="twk-row twk-row-h">
+      <div className="twk-lbl"><span>{label}</span></div>
+      <input type="color" className="twk-swatch" value={value}
+             onChange={(e) => onChange(e.target.value)} />
+    </div>
+  );
+}
+
+function TweakButton({ label, onClick, secondary = false }) {
+  return (
+    <button type="button" className={secondary ? 'twk-btn secondary' : 'twk-btn'}
+            onClick={onClick}>{label}</button>
+  );
+}
+
+Object.assign(window, {
+  useTweaks, TweaksPanel, TweakSection, TweakRow,
+  TweakSlider, TweakToggle, TweakRadio, TweakSelect,
+  TweakText, TweakNumber, TweakColor, TweakButton,
+});
+
+  </script>
+  <script type="text/babel">
+const FunnelDemo = () => {
+  const [step, setStep] = React.useState(0);
+  const [selected, setSelected] = React.useState(null);
+  const [formData, setFormData] = React.useState({ name: '', email: '', phone: '' });
+  const [submitted, setSubmitted] = React.useState(false);
+
+  const questions = [
+    {
+      title: 'Worauf soll die Solaranlage installiert werden?',
+      options: [
+        { label: 'Einfamilienhaus', icon: 'home' },
+        { label: 'Mehrfamilienhaus', icon: 'apartment' },
+        { label: 'Firmengebäude', icon: 'factory' },
+        { label: 'Sonstiges', icon: 'question_mark' },
+      ]
+    },
+    {
+      title: 'Wie ist dein Dach ausgerichtet?',
+      options: [
+        { label: 'Süden', icon: 'south' },
+        { label: 'Ost/West', icon: 'swap_horiz' },
+        { label: 'Flachdach', icon: 'crop_landscape' },
+        { label: 'Weiß nicht', icon: 'help_outline' },
+      ]
+    },
+    {
+      title: 'Wann soll das Projekt starten?',
+      options: [
+        { label: 'Sofort', icon: 'bolt' },
+        { label: 'In 1–3 Monaten', icon: 'date_range' },
+        { label: 'In 3–6 Monaten', icon: 'calendar_month' },
+        { label: 'Nur informieren', icon: 'menu_book' },
+      ]
+    },
+  ];
+
+  const progress = submitted ? 100 : Math.round(((step) / (questions.length + 1)) * 100);
+
+  const handleOptionClick = (idx) => {
+    setSelected(idx);
+    setTimeout(() => {
+      setSelected(null);
+      if (step < questions.length - 1) {
+        setStep(s => s + 1);
+      } else {
+        setStep(questions.length); // contact form
+      }
+    }, 300);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
+  const cardStyle = {
+    background: '#fff', borderRadius: 16, overflow: 'hidden',
+    boxShadow: '0 4px 24px rgba(70,72,212,0.12), 0 1px 3px rgba(0,0,0,0.06)',
+    border: '1px solid var(--color-border)',
+    maxWidth: 400, width: '100%',
+  };
+
+  const optionStyle = (isSelected) => ({
+    background: isSelected ? '#f0f0ff' : '#fff',
+    border: isSelected ? '2px solid #4648d4' : '2px solid #e7e7ee',
+    borderRadius: 12, padding: '16px 12px',
+    display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8,
+    cursor: 'pointer', transition: 'all 150ms',
+    flex: '1 1 calc(50% - 6px)', minWidth: 0,
+  });
+
+  return (
+    <div style={cardStyle}>
+      {/* Window chrome */}
+      <div style={{
+        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+        padding: '12px 16px', background: '#f8f9fb', borderBottom: '1px solid #eee',
+      }}>
+        <div style={{ display: 'flex', gap: 6 }}>
+          <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#ff5f56' }}></div>
+          <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#ffbd2e' }}></div>
+          <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#27c93f' }}></div>
+        </div>
+        <span style={{ fontSize: 11, color: '#999', fontWeight: 500, letterSpacing: '0.05em' }}>Live-Demo</span>
+      </div>
+
+      {/* Content */}
+      <div style={{ padding: '32px 28px 24px' }}>
+        {submitted ? (
+          <div style={{ textAlign: 'center', padding: '24px 0' }}>
+            <div style={{
+              width: 56, height: 56, borderRadius: '50%', background: '#e8ffe8',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              margin: '0 auto 16px', color: '#22c55e', fontSize: 28,
+            }}>✓</div>
+            <h3 style={{ fontFamily: 'var(--font-ui)', fontSize: 20, fontWeight: 600, marginBottom: 8 }}>
+              Vielen Dank!
+            </h3>
+            <p style={{ color: 'var(--color-fg-3)', fontSize: 14 }}>
+              Wir melden uns innerhalb von 24 Stunden.
+            </p>
+            <button onClick={() => { setStep(0); setSubmitted(false); setFormData({name:'',email:'',phone:''}); }}
+              style={{
+                marginTop: 20, background: 'none', border: '1px solid #ddd', borderRadius: 8,
+                padding: '8px 16px', fontSize: 13, color: '#666', cursor: 'pointer',
+              }}>
+              Demo neu starten
+            </button>
+          </div>
+        ) : step < questions.length ? (
+          <div>
+            <h3 style={{
+              fontFamily: 'var(--font-ui)', fontSize: 18, fontWeight: 600,
+              textAlign: 'center', marginBottom: 24, color: 'var(--color-fg)',
+              lineHeight: 1.3,
+            }}>{questions[step].title}</h3>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12 }}>
+              {questions[step].options.map((opt, i) => (
+                <button key={i} style={optionStyle(selected === i)}
+                  onClick={() => handleOptionClick(i)}
+                  onMouseEnter={e => { if(selected !== i) e.currentTarget.style.borderColor = '#b0b0ff'; }}
+                  onMouseLeave={e => { if(selected !== i) e.currentTarget.style.borderColor = '#e7e7ee'; }}>
+                  <span className="material-symbols-outlined" style={{ fontSize: 28, color: selected === i ? '#4648d4' : '#666' }}>
+                    {opt.icon}
+                  </span>
+                  <span style={{ fontSize: 13, fontWeight: 500, color: selected === i ? '#4648d4' : '#444' }}>
+                    {opt.label}
+                  </span>
+                </button>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit}>
+            <h3 style={{
+              fontFamily: 'var(--font-ui)', fontSize: 18, fontWeight: 600,
+              textAlign: 'center', marginBottom: 6, color: 'var(--color-fg)',
+            }}>Wer soll das Angebot erhalten?</h3>
+            <p style={{ textAlign: 'center', fontSize: 13, color: '#999', marginBottom: 20 }}>Noch ein letzter Schritt</p>
+            {[
+              { key: 'name', label: 'Name', type: 'text', placeholder: 'Max Mustermann' },
+              { key: 'email', label: 'E-Mail', type: 'email', placeholder: 'max@beispiel.de' },
+              { key: 'phone', label: 'Telefon', type: 'tel', placeholder: '+49 123 456789' },
+            ].map(f => (
+              <div key={f.key} style={{ marginBottom: 14 }}>
+                <label style={{ display: 'block', fontSize: 12, fontWeight: 600, color: '#555', marginBottom: 5 }}>{f.label}</label>
+                <input type={f.type} placeholder={f.placeholder}
+                  value={formData[f.key]}
+                  onChange={e => setFormData(d => ({...d, [f.key]: e.target.value}))}
+                  style={{
+                    width: '100%', padding: '10px 14px', borderRadius: 10,
+                    border: '1px solid #e0e0e0', fontSize: 14, outline: 'none',
+                    transition: 'border 150ms', boxSizing: 'border-box',
+                  }}
+                  onFocus={e => e.target.style.borderColor = '#4648d4'}
+                  onBlur={e => e.target.style.borderColor = '#e0e0e0'}
+                />
+              </div>
+            ))}
+            <button type="submit" style={{
+              width: '100%', padding: '12px 0', background: '#4648d4', color: '#fff',
+              borderRadius: 10, border: 'none', fontSize: 15, fontWeight: 600,
+              cursor: 'pointer', marginTop: 4, transition: 'background 150ms',
+            }} onMouseEnter={e => e.target.style.background = '#3538b8'}
+               onMouseLeave={e => e.target.style.background = '#4648d4'}>
+              Anfrage absenden
+            </button>
+          </form>
+        )}
+
+        {/* Progress bar */}
+        {!submitted && (
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 20 }}>
+            {step > 0 && (
+              <button onClick={() => setStep(s => s - 1)} style={{
+                background: 'none', border: 'none', fontSize: 13, color: '#999',
+                cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 2,
+              }}>
+                <span className="material-symbols-outlined" style={{ fontSize: 16 }}>chevron_left</span>
+                zurück
+              </button>
+            )}
+            <div style={{ flex: 1, height: 4, background: '#eee', borderRadius: 4, overflow: 'hidden' }}>
+              <div style={{
+                height: '100%', background: '#f59e0b', borderRadius: 4,
+                width: `${progress}%`, transition: 'width 300ms',
+              }}></div>
+            </div>
+            <span style={{ fontSize: 12, color: '#aaa', fontWeight: 500 }}>{progress}%</span>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+
+
+const Nav = () => {
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  const navLinks = [
+    { label: 'Features', href: '#features' },
+    { label: 'Branchen', href: '#branchen' },
+    { label: 'So funktionierts', href: '#schritte' },
+    { label: 'FAQ', href: '#faq' },
+  ];
+
+  return (
+    <nav style={{
+      position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
+      background: 'rgba(253,253,253,0.85)', backdropFilter: 'blur(12px)',
+      borderBottom: '1px solid var(--color-border)',
+      fontFamily: 'var(--font-ui)', overflow: 'hidden',
+    }}>
+      <div style={{
+        maxWidth: 1200, margin: '0 auto', padding: '0 24px',
+        height: 64, display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+      }}>
+        {/* Logo */}
+        <a href="#" style={{ display: 'flex', alignItems: 'center', gap: 8, textDecoration: 'none' }}>
+          <div style={{
+            width: 32, height: 32, borderRadius: 8, background: '#4648d4',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            color: '#fff', fontWeight: 700, fontSize: 16, fontFamily: 'var(--font-display)',
+          }}>S</div>
+          <span style={{ fontWeight: 700, fontSize: 18, color: 'var(--color-fg)', letterSpacing: '-0.02em' }}>SingoTec</span>
+        </a>
+
+        {/* Desktop links */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 32 }} className="nav-desktop">
+          {navLinks.map(l => (
+            <a key={l.href} href={l.href} style={{
+              color: 'var(--color-fg-3)', fontSize: 14, fontWeight: 500,
+              textDecoration: 'none', transition: 'color 150ms',
+            }} onMouseEnter={e => e.target.style.color = 'var(--color-fg)'}
+               onMouseLeave={e => e.target.style.color = 'var(--color-fg-3)'}>{l.label}</a>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+          <a href="#cta" style={{
+            background: '#4648d4', color: '#fff', padding: '10px 20px',
+            borderRadius: 999, fontSize: 14, fontWeight: 600,
+            textDecoration: 'none', transition: 'background 150ms',
+          }} onMouseEnter={e => e.target.style.background = '#3538b8'}
+             onMouseLeave={e => e.target.style.background = '#4648d4'}>
+            Kostenlos starten
+          </a>
+        </div>
+      </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .nav-desktop { display: none !important; }
+        }
+      `}</style>
+    </nav>
+  );
+};
+
+
+
+const Hero = () => (
+  <section style={{
+    paddingTop: 128, paddingBottom: 80,
+    maxWidth: 1200, margin: '0 auto', padding: '128px 24px 80px',
+  }}>
+    <div style={{
+      display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, alignItems: 'center',
+    }} className="hero-grid">
+      {/* Left */}
+      <div>
+        <div style={{
+          display: 'inline-flex', alignItems: 'center', gap: 8,
+          background: '#f0f0ff', padding: '6px 14px', borderRadius: 999,
+          fontSize: 13, fontWeight: 600, color: '#4648d4', marginBottom: 24,
+        }}>
+          <span style={{
+            width: 7, height: 7, borderRadius: '50%', background: '#4648d4',
+            display: 'inline-block', animation: 'pulse 2s infinite',
+          }}></span>
+          Für Handwerksbetriebe
+        </div>
+        <h1 style={{
+          fontFamily: 'var(--font-display)', fontSize: 'clamp(36px, 5vw, 56px)',
+          fontWeight: 600, lineHeight: 1.1, letterSpacing: '-0.03em',
+          color: 'var(--color-fg)', marginBottom: 40,
+        }}>
+          Mehr Anfragen.<br/>Weniger Reibung.<br/>
+          <span style={{ color: '#4648d4' }}>Direkt auf deiner Website.</span>
+        </h1>
+        <p style={{
+          fontSize: 18, lineHeight: 1.6, color: 'var(--color-fg-3)',
+          maxWidth: 460, marginBottom: 32,
+        }}>
+          Verwandle Website-Besucher in qualifizierte Leads — mit interaktiven Formularen, die in 5 Minuten eingerichtet sind.
+        </p>
+        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+          <a href="#cta" style={{
+            background: '#4648d4', color: '#fff', padding: '14px 28px',
+            borderRadius: 999, fontSize: 15, fontWeight: 600,
+            textDecoration: 'none', transition: 'all 150ms',
+            display: 'inline-flex', alignItems: 'center', gap: 8,
+          }}>
+            Jetzt kostenlos starten
+            <span className="material-symbols-outlined" style={{ fontSize: 18 }}>arrow_forward</span>
+          </a>
+        </div>
+        <div style={{
+          display: 'flex', alignItems: 'center', gap: 16, marginTop: 28,
+          fontSize: 13, color: 'var(--color-fg-3)', flexWrap: 'wrap',
+        }}>
+          <span style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+            <span className="material-symbols-outlined" style={{ fontSize: 16, color: '#22c55e' }}>check_circle</span>
+            100% DSGVO-konform
+          </span>
+          <span style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+            <span className="material-symbols-outlined" style={{ fontSize: 16, color: '#22c55e' }}>check_circle</span>
+            Keine Programmierkenntnisse
+          </span>
+          <span style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+            <span className="material-symbols-outlined" style={{ fontSize: 16, color: '#22c55e' }}>check_circle</span>
+            In 5 Min. eingerichtet
+          </span>
+        </div>
+      </div>
+
+      {/* Right — Demo */}
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <FunnelDemo />
+      </div>
+    </div>
+
+    <style>{`
+      @keyframes pulse { 0%,100% { opacity:1 } 50% { opacity:0.4 } }
+      @media (max-width: 900px) {
+        .hero-grid { grid-template-columns: 1fr !important; }
+      }
+    `}</style>
+  </section>
+);
+
+
+
+const Comparison = () => {
+  return (
+    <section style={{ padding: '80px 24px' }}>
+      <div style={{ maxWidth: 800, margin: '0 auto' }}>
+        <div style={{ textAlign: 'center', marginBottom: 48 }}>
+          <h2 style={{
+            fontFamily: 'var(--font-display)', fontSize: 'clamp(28px, 4vw, 42px)',
+            fontWeight: 600, lineHeight: 1.15, letterSpacing: '-0.02em',
+          }}>Welches Formular würdest du ausfüllen?</h2>
+        </div>
+        <div style={{ display: 'flex', gap: 28, flexWrap: 'wrap', alignItems: 'stretch' }}>
+          {/* Boring form */}
+          <div style={{
+            flex: '1 1 300px', borderRadius: 20, overflow: 'hidden',
+            border: '1px solid #e8e8e8', background: '#f6f6f6', opacity: 0.7,
+            display: 'flex', flexDirection: 'column',
+          }}>
+            <div style={{ padding: '24px 24px 20px', flex: 1 }}>
+              {['Name *', 'E-Mail *', 'Telefon', 'Betreff', 'Ihre Nachricht...'].map((f, i) => (
+                <div key={i} style={{ marginBottom: i === 4 ? 0 : 10 }}>
+                  <div style={{ fontSize: 10, color: '#aaa', marginBottom: 3 }}>{f}</div>
+                  <div style={{
+                    height: i === 4 ? 56 : 30, background: '#fff', borderRadius: 5,
+                    border: '1px solid #ddd',
+                  }}></div>
+                </div>
+              ))}
+              <div style={{
+                height: 34, background: '#bbb', borderRadius: 6, marginTop: 14,
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                fontSize: 11, color: '#fff', fontWeight: 600,
+              }}>Absenden</div>
+            </div>
+            <div style={{
+              padding: '12px 0', textAlign: 'center', fontSize: 13, fontWeight: 600,
+              color: '#999', borderTop: '1px solid #e8e8e8', background: '#f0f0f0',
+            }}>Kontaktformular</div>
+          </div>
+
+          {/* Interactive funnel */}
+          <div style={{
+            flex: '1 1 300px', borderRadius: 20, overflow: 'hidden',
+            border: '2px solid #4648d4', background: '#fafaff',
+            display: 'flex', flexDirection: 'column',
+            boxShadow: '0 4px 24px rgba(70,72,212,0.12)',
+          }}>
+            <div style={{ padding: '24px 24px 20px', flex: 1 }}>
+              <div style={{ fontSize: 14, fontWeight: 600, textAlign: 'center', marginBottom: 16, color: '#222' }}>
+                Welches Dach haben Sie?
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
+                {[
+                  { label: 'Satteldach', icon: 'home' },
+                  { label: 'Flachdach', icon: 'roofing' },
+                  { label: 'Pultdach', icon: 'house' },
+                  { label: 'Sonstige', icon: 'more_horiz' },
+                ].map((o, i) => (
+                  <div key={i} style={{
+                    padding: '14px 8px', borderRadius: 10, textAlign: 'center',
+                    border: i === 0 ? '2px solid #4648d4' : '1px solid #dde',
+                    background: i === 0 ? '#eeeeff' : '#fff',
+                    display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4,
+                  }}>
+                    <span className="material-symbols-outlined" style={{
+                      fontSize: 22, color: i === 0 ? '#4648d4' : '#888',
+                    }}>{o.icon}</span>
+                    <span style={{ fontSize: 12, fontWeight: 500, color: i === 0 ? '#4648d4' : '#666' }}>{o.label}</span>
+                  </div>
+                ))}
+              </div>
+              <div style={{
+                height: 5, background: '#e8e8f0', borderRadius: 4, marginTop: 16, overflow: 'hidden',
+              }}>
+                <div style={{ height: '100%', width: '33%', background: '#f59e0b', borderRadius: 4 }}></div>
+              </div>
+            </div>
+            <div style={{
+              padding: '12px 0', textAlign: 'center', fontSize: 13, fontWeight: 600,
+              color: '#4648d4', borderTop: '1px solid #e0e4ff', background: '#f0f0ff',
+            }}>Interaktiver Funnel</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Features = () => {
+  const items = [
+    { icon: 'bolt', title: 'Höhere Conversionrate', desc: 'Interaktive Funnels statt langweilige Kontaktformulare — Besucher bleiben dran und schließen ab.' },
+    { icon: 'palette', title: 'Dein Branding', desc: 'Farben, Texte, Logo — alles anpassbar. Das Widget sieht aus, als gehöre es zu deiner Seite.' },
+    { icon: 'code', title: 'Ein Snippet, fertig', desc: 'Kopiere einen iFrame-Code und binde ihn auf jeder Website ein. WordPress, Wix, Jimdo — egal.' },
+    { icon: 'mail', title: 'Sofort Leads erhalten', desc: 'Jede Anfrage landet strukturiert in deinem E-Mail-Postfach — mit allen Antworten auf einen Blick.' },
+    { icon: 'shield', title: 'DSGVO-konform', desc: 'Hosting in Deutschland, keine Cookies, kein Tracking. Datenschutz ab Werk.' },
+    { icon: 'tune', title: 'Branchenspezifisch', desc: 'Vorkonfigurierte Fragen für Solar, Heizung, Sanitär & mehr. Du passt nur noch an.' },
+  ];
+
+  return (
+    <section id="features" style={{
+      padding: '96px 24px', maxWidth: 1200, margin: '0 auto',
+    }}>
+      <div style={{ textAlign: 'center', marginBottom: 56 }}>
+        <span className="overline" style={{ color: '#4648d4', marginBottom: 8, display: 'block' }}>VORTEILE</span>
+        <h2 style={{
+          fontFamily: 'var(--font-display)', fontSize: 'clamp(28px, 4vw, 42px)',
+          fontWeight: 600, lineHeight: 1.15, letterSpacing: '-0.02em',
+        }}>Warum SingoTec?</h2>
+      </div>
+      <div style={{
+        display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24,
+      }}>
+        {items.map((item, i) => (
+          <div key={i} style={{
+            padding: 28, borderRadius: 16, border: '1px solid var(--color-border)',
+            background: '#fff', transition: 'box-shadow 250ms, border-color 250ms',
+          }}
+          onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 4px 24px rgba(70,72,212,0.1)'; e.currentTarget.style.borderColor = '#c8c8ff'; }}
+          onMouseLeave={e => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.borderColor = 'var(--color-border)'; }}>
+            <div style={{
+              width: 44, height: 44, borderRadius: 12, background: '#f0f0ff',
+              display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16,
+            }}>
+              <span className="material-symbols-outlined" style={{ fontSize: 22, color: '#4648d4' }}>{item.icon}</span>
+            </div>
+            <h4 style={{ fontFamily: 'var(--font-ui)', fontSize: 17, fontWeight: 600, marginBottom: 8 }}>{item.title}</h4>
+            <p style={{ fontSize: 14, lineHeight: 1.55, color: 'var(--color-fg-3)', margin: 0 }}>{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+
+
+const Branchen = () => {
+  const items = [
+    { icon: 'wb_sunny', color: '#f97316', bg: '#fff7ed', label: 'Solaranlagen', desc: 'Dachtyp, Ausrichtung, Stromverbrauch — sofort einsatzbereit.', status: 'live' },
+    { icon: 'heat_pump', color: '#3b82f6', bg: '#eff6ff', label: 'Wärmepumpen', desc: 'Heizlast, Gebäudeart, Förderung — gezielt qualifizieren.', status: 'live' },
+    { icon: 'hvac', color: '#ef4444', bg: '#fef2f2', label: 'Heizungsmontage', desc: 'Bestandsheizung, Baujahr, Gebäudetyp — strukturierte Erstanfragen.', status: 'live' },
+    { icon: 'bathtub', color: '#06b6d4', bg: '#ecfeff', label: 'Sanitär & Bad', desc: 'Badumbau, Notfall, Umfang — filtert ernsthafte Anfragen.', status: 'live' },
+    { icon: 'settings', color: '#64748b', bg: '#f8fafc', label: 'Eigene Branche', desc: 'Deine Fragen, dein Branding — vollständig anpassbar.', status: 'custom' },
+  ];
+
+  const statusLabel = { live: 'Verfügbar', soon: 'Bald verfügbar', custom: 'Individuell' };
+  const statusColor = { live: { bg: '#f0f0ff', fg: '#4648d4' }, soon: { bg: '#fef3c7', fg: '#b45309' }, custom: { bg: '#f1f5f9', fg: '#475569' } };
+
+  return (
+    <section id="branchen" style={{ padding: '96px 24px', background: '#fafbff' }}>
+      <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+        <div style={{ textAlign: 'center', marginBottom: 56 }}>
+          <span className="overline" style={{ color: '#4648d4', marginBottom: 8, display: 'block' }}>BRANCHEN</span>
+          <h2 style={{
+            fontFamily: 'var(--font-display)', fontSize: 'clamp(28px, 4vw, 42px)',
+            fontWeight: 600, lineHeight: 1.15, letterSpacing: '-0.02em',
+          }}>Für jedes Handwerk das passende Formular</h2>
+          <p style={{ fontSize: 16, color: 'var(--color-fg-3)', marginTop: 12, maxWidth: 520, marginInline: 'auto' }}>
+            Branchenspezifische Fragen, bereits vorkonfiguriert. Du passt einfach an, was du brauchst.
+          </p>
+        </div>
+        <div style={{
+          display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 16,
+        }}>
+          {items.map((item, i) => (
+            <div key={i} style={{
+              padding: 24, borderRadius: 16, background: '#fff',
+              border: '1px solid var(--color-border)', transition: 'box-shadow 250ms',
+            }}
+            onMouseEnter={e => e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.06)'}
+            onMouseLeave={e => e.currentTarget.style.boxShadow = 'none'}>
+              <div style={{
+                width: 40, height: 40, borderRadius: 10, background: item.bg,
+                display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 14,
+              }}>
+                <span className="material-symbols-outlined" style={{ fontSize: 20, color: item.color }}>{item.icon}</span>
+              </div>
+              <h4 style={{ fontSize: 15, fontWeight: 600, marginBottom: 6 }}>{item.label}</h4>
+              <p style={{ fontSize: 13, lineHeight: 1.5, color: 'var(--color-fg-3)', marginBottom: 14 }}>{item.desc}</p>
+              <span style={{
+                display: 'inline-block', fontSize: 11, fontWeight: 700,
+                padding: '3px 8px', borderRadius: 4, textTransform: 'uppercase', letterSpacing: '0.04em',
+                background: statusColor[item.status].bg, color: statusColor[item.status].fg,
+              }}>{statusLabel[item.status]}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+
+
+const Steps = () => {
+  const [active, setActive] = React.useState(0);
+  const steps = [
+    { num: '01', icon: 'tune', title: 'Funnel konfigurieren', desc: 'Wähle eine Branchenvorlage, passe Farben und Fragen an — fertig in Minuten.' },
+    { num: '02', icon: 'code', title: 'Auf der Website einbinden', desc: 'Kopiere ein Code-Snippet und füge es in deine Website ein. WordPress, Wix, Typo3 — egal.' },
+    { num: '03', icon: 'mark_email_read', title: 'Anfragen empfangen', desc: 'Qualifizierte Leads landen direkt in deinem E-Mail-Postfach — strukturiert und sofort.' },
+  ];
+
+  React.useEffect(() => {
+    const timer = setInterval(() => setActive(a => (a + 1) % 3), 4000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <section id="schritte" style={{ padding: '96px 24px' }}>
+      <div style={{ maxWidth: 1200, margin: '0 auto' }}>
+        <div style={{ textAlign: 'center', marginBottom: 56 }}>
+          <span className="overline" style={{ color: '#4648d4', marginBottom: 8, display: 'block' }}>SO FUNKTIONIERT'S</span>
+          <h2 style={{
+            fontFamily: 'var(--font-display)', fontSize: 'clamp(28px, 4vw, 42px)',
+            fontWeight: 600, lineHeight: 1.15, letterSpacing: '-0.02em',
+          }}>In 3 Schritten zu mehr Anfragen</h2>
+        </div>
+        <div style={{
+          display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 32,
+        }}>
+          {steps.map((s, i) => {
+            const isActive = i === active;
+            return (
+              <div key={i} style={{
+                textAlign: 'center', cursor: 'pointer',
+                transition: 'transform 400ms cubic-bezier(0.4,0,0.2,1), opacity 400ms',
+                transform: isActive ? 'scale(1.04)' : 'scale(1)',
+                opacity: isActive ? 1 : 0.45,
+              }} onClick={() => setActive(i)}>
+                <div style={{
+                  width: 72, height: 72, borderRadius: 18,
+                  background: isActive ? '#4648d4' : '#fff',
+                  border: isActive ? '2px solid #4648d4' : '1px solid var(--color-border)',
+                  boxShadow: isActive ? '0 4px 24px rgba(70,72,212,0.25)' : '0 2px 8px rgba(0,0,0,0.04)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  margin: '0 auto 20px', transition: 'all 400ms cubic-bezier(0.4,0,0.2,1)',
+                }}>
+                  <span className="material-symbols-outlined" style={{
+                    fontSize: 32, color: isActive ? '#fff' : '#4648d4',
+                    transition: 'color 400ms',
+                  }}>{s.icon}</span>
+                </div>
+                <span style={{
+                  display: 'inline-block',
+                  background: isActive ? '#4648d4' : '#f0f0ff',
+                  color: isActive ? '#fff' : '#4648d4',
+                  fontSize: 11, fontWeight: 700, padding: '3px 10px', borderRadius: 4, marginBottom: 12,
+                  transition: 'all 400ms',
+                }}>{s.num}</span>
+                <h4 style={{ fontSize: 18, fontWeight: 600, marginBottom: 8 }}>{s.title}</h4>
+                <p style={{ fontSize: 14, lineHeight: 1.55, color: 'var(--color-fg-3)', maxWidth: 320, margin: '0 auto' }}>{s.desc}</p>
+                {/* Progress bar under active */}
+                <div style={{
+                  width: 40, height: 3, borderRadius: 2, margin: '16px auto 0',
+                  background: isActive ? '#4648d4' : 'transparent',
+                  transition: 'background 400ms',
+                }}></div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+
+
+const FAQ = () => {
+  const [open, setOpen] = React.useState(null);
+
+  const items = [
+    { q: 'Brauche ich Programmierkenntnisse?', a: 'Nein. Du wählst eine Vorlage, passt Texte und Farben an und kopierst ein iFrame-Snippet auf deine Seite. Das dauert weniger als 5 Minuten.' },
+    { q: 'Was kostet SingoTec?', a: 'Du zahlst nur pro qualifiziertem Lead — keine monatliche Grundgebühr, kein Risiko. Die genauen Konditionen besprechen wir individuell.' },
+    { q: 'Ist das DSGVO-konform?', a: 'Ja. Hosting in Deutschland, keine Cookies, kein externes Tracking. Fonts werden selbst gehostet. Datenschutz ist bei uns Standard, nicht Addon.' },
+    { q: 'Funktioniert das mit meiner Website?', a: 'Ja — das Widget wird als iFrame eingebunden und funktioniert mit jeder Website: WordPress, Wix, Jimdo, Squarespace, Typo3 oder individuell.' },
+    { q: 'Wie erhalte ich die Anfragen?', a: 'Jede Anfrage wird dir sofort per E-Mail zugestellt — strukturiert mit allen Antworten. Eine CRM-Anbindung ist in Planung.' },
+    { q: 'Kann ich das Widget an mein Branding anpassen?', a: 'Ja. Farben, Texte, Logo — alles ist konfigurierbar. Das Widget sieht aus, als gehöre es nativ zu deiner Seite.' },
+  ];
+
+  return (
+    <section id="faq" style={{ padding: '96px 24px', background: '#fafbff' }}>
+      <div style={{ maxWidth: 720, margin: '0 auto' }}>
+        <div style={{ textAlign: 'center', marginBottom: 48 }}>
+          <span className="overline" style={{ color: '#4648d4', marginBottom: 8, display: 'block' }}>FAQ</span>
+          <h2 style={{
+            fontFamily: 'var(--font-display)', fontSize: 'clamp(28px, 4vw, 42px)',
+            fontWeight: 600, lineHeight: 1.15, letterSpacing: '-0.02em',
+          }}>Häufige Fragen</h2>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
+          {items.map((item, i) => (
+            <div key={i} style={{
+              borderBottom: '1px solid var(--color-border)',
+            }}>
+              <button onClick={() => setOpen(open === i ? null : i)} style={{
+                width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                padding: '20px 0', background: 'none', border: 'none', cursor: 'pointer',
+                textAlign: 'left', gap: 16,
+              }}>
+                <span style={{ fontSize: 15, fontWeight: 600, color: 'var(--color-fg)' }}>{item.q}</span>
+                <span className="material-symbols-outlined" style={{
+                  fontSize: 20, color: '#999', flexShrink: 0,
+                  transition: 'transform 200ms', transform: open === i ? 'rotate(180deg)' : 'rotate(0)',
+                }}>expand_more</span>
+              </button>
+              <div style={{
+                overflow: 'hidden', maxHeight: open === i ? 200 : 0,
+                transition: 'max-height 250ms ease',
+              }}>
+                <p style={{
+                  fontSize: 14, lineHeight: 1.6, color: 'var(--color-fg-3)',
+                  paddingBottom: 20, margin: 0,
+                }}>{item.a}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+
+
+const CTAFunnel = () => {
+  const [step, setStep] = React.useState(0);
+  const [answers, setAnswers] = React.useState({});
+  const [email, setEmail] = React.useState('');
+  const [submitted, setSubmitted] = React.useState(false);
+
+  const questions = [
+    { key: 'branche', title: 'Welche Branche bist du?', options: [
+      { label: 'Solar', icon: 'wb_sunny' }, { label: 'Wärmepumpe', icon: 'heat_pump' },
+      { label: 'Heizung', icon: 'hvac' }, { label: 'Sanitär', icon: 'bathtub' },
+      { label: 'Dach', icon: 'roofing' }, { label: 'Andere', icon: 'more_horiz' },
+    ]},
+    { key: 'anfragen', title: 'Wie viele Anfragen brauchst du pro Monat?', options: [
+      { label: '5–10', icon: 'trending_up' }, { label: '10–30', icon: 'show_chart' },
+      { label: '30–50', icon: 'insights' }, { label: '50+', icon: 'rocket_launch' },
+    ]},
+    { key: 'website', title: 'Hast du bereits eine Website?', options: [
+      { label: 'Ja, WordPress', icon: 'language' }, { label: 'Ja, andere', icon: 'web' },
+      { label: 'Nein, noch nicht', icon: 'block' }, { label: 'In Planung', icon: 'edit_note' },
+    ]},
+  ];
+
+  const progress = submitted ? 100 : Math.round((step / (questions.length + 1)) * 100);
+
+  const handleOption = (key, val) => {
+    setAnswers(a => ({...a, [key]: val}));
+    setTimeout(() => setStep(s => s + 1), 250);
+  };
+
+  const optStyle = (selected) => ({
+    background: selected ? '#f0f0ff' : '#fff',
+    border: selected ? '2px solid #4648d4' : '2px solid rgba(255,255,255,0.15)',
+    borderRadius: 12, padding: '14px 10px',
+    display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6,
+    cursor: 'pointer', transition: 'all 150ms', flex: '1 1 calc(33% - 8px)', minWidth: 90,
+  });
+
+  return (
+    <div style={{
+      maxWidth: 560, margin: '0 auto', background: '#fff', borderRadius: 20,
+      padding: '36px 36px 28px', boxShadow: '0 8px 40px rgba(0,0,0,0.15)',
+    }}>
+      {submitted ? (
+        <div style={{ textAlign: 'center', padding: '16px 0' }}>
+          <div style={{
+            width: 48, height: 48, borderRadius: '50%', background: '#e8ffe8',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            margin: '0 auto 14px', color: '#22c55e', fontSize: 24,
+          }}>✓</div>
+          <h3 style={{ fontFamily: 'var(--font-ui)', fontSize: 18, fontWeight: 600, marginBottom: 6, color: '#111' }}>
+            Danke für dein Interesse!
+          </h3>
+          <p style={{ color: '#888', fontSize: 14 }}>Wir melden uns innerhalb von 24 Stunden bei dir.</p>
+        </div>
+      ) : step < questions.length ? (
+        <div>
+          <div style={{ textAlign: 'center', marginBottom: 6 }}>
+            <p style={{ fontSize: 12, color: '#999' }}>Schritt {step + 1} von {questions.length + 1}</p>
+          </div>
+          <h3 style={{
+            fontFamily: 'var(--font-ui)', fontSize: 17, fontWeight: 600,
+            textAlign: 'center', marginBottom: 20, color: '#111', lineHeight: 1.3,
+          }}>{questions[step].title}</h3>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, justifyContent: 'center' }}>
+            {questions[step].options.map((opt, i) => (
+              <button key={i} style={optStyle(answers[questions[step].key] === opt.label)}
+                onClick={() => handleOption(questions[step].key, opt.label)}>
+                <span className="material-symbols-outlined" style={{ fontSize: 24, color: '#4648d4' }}>{opt.icon}</span>
+                <span style={{ fontSize: 12, fontWeight: 500, color: '#444' }}>{opt.label}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      ) : (
+        <div>
+          <div style={{ textAlign: 'center', marginBottom: 6 }}>
+            <p style={{ fontSize: 12, color: '#999' }}>Letzter Schritt</p>
+          </div>
+          <h3 style={{
+            fontFamily: 'var(--font-ui)', fontSize: 17, fontWeight: 600,
+            textAlign: 'center', marginBottom: 18, color: '#111',
+          }}>Wohin sollen wir deine Zugangsdaten senden?</h3>
+          <input type="email" placeholder="deine@email.de" value={email}
+            onChange={e => setEmail(e.target.value)}
+            style={{
+              width: '100%', padding: '12px 14px', borderRadius: 10,
+              border: '1px solid #ddd', fontSize: 14, outline: 'none',
+              marginBottom: 12, boxSizing: 'border-box',
+            }}
+            onFocus={e => e.target.style.borderColor = '#4648d4'}
+            onBlur={e => e.target.style.borderColor = '#ddd'}
+          />
+          <button onClick={() => { if(email) setSubmitted(true); }} style={{
+            width: '100%', padding: '13px 0', background: '#4648d4', color: '#fff',
+            borderRadius: 10, border: 'none', fontSize: 15, fontWeight: 600,
+            cursor: 'pointer', transition: 'background 150ms',
+          }} onMouseEnter={e => e.target.style.background = '#3538b8'}
+             onMouseLeave={e => e.target.style.background = '#4648d4'}>
+            Kostenlos starten
+          </button>
+        </div>
+      )}
+
+      {!submitted && (
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginTop: 18 }}>
+          {step > 0 && (
+            <button onClick={() => setStep(s => s - 1)} style={{
+              background: 'none', border: 'none', fontSize: 12, color: '#999', cursor: 'pointer',
+              display: 'flex', alignItems: 'center', gap: 2,
+            }}>
+              <span className="material-symbols-outlined" style={{ fontSize: 14 }}>chevron_left</span>zurück
+            </button>
+          )}
+          <div style={{ flex: 1, height: 3, background: '#eee', borderRadius: 3, overflow: 'hidden' }}>
+            <div style={{ height: '100%', background: '#f59e0b', borderRadius: 3, width: `${progress}%`, transition: 'width 300ms' }}></div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+const CTASection = () => (
+  <section id="cta" style={{ padding: '96px 24px' }}>
+    <div style={{
+      maxWidth: 900, margin: '0 auto', background: '#0f1029',
+      borderRadius: 24, padding: 'clamp(48px, 6vw, 72px) clamp(24px, 4vw, 60px)', position: 'relative', overflow: 'hidden',
+    }}>
+      <div style={{
+        position: 'absolute', top: -60, right: -60, width: 200, height: 200,
+        background: 'radial-gradient(circle, rgba(70,72,212,0.3), transparent 70%)', borderRadius: '50%',
+      }}></div>
+      <div style={{
+        position: 'absolute', bottom: -40, left: -40, width: 160, height: 160,
+        background: 'radial-gradient(circle, rgba(99,102,241,0.2), transparent 70%)', borderRadius: '50%',
+      }}></div>
+
+      <h2 style={{
+        fontFamily: 'var(--font-display)', fontSize: 'clamp(24px, 3.5vw, 34px)',
+        fontWeight: 600, lineHeight: 1.2, color: '#fff', textAlign: 'center',
+        marginBottom: 32, position: 'relative', zIndex: 1,
+      }}>
+        Jetzt kostenlos deinen ersten Funnel einrichten
+      </h2>
+      <div style={{ position: 'relative', zIndex: 1 }}>
+        <CTAFunnel />
+      </div>
+    </div>
+  </section>
+);
+
+const Footer = () => (
+  <footer style={{
+    borderTop: '1px solid var(--color-border)', padding: '40px 24px',
+    background: '#fafbff',
+  }}>
+    <div style={{
+      maxWidth: 1200, margin: '0 auto',
+      display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+      flexWrap: 'wrap', gap: 16,
+    }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+        <div style={{
+          width: 28, height: 28, borderRadius: 7, background: '#4648d4',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          color: '#fff', fontWeight: 700, fontSize: 14, fontFamily: 'var(--font-display)',
+        }}>S</div>
+        <span style={{ fontWeight: 600, fontSize: 15, color: 'var(--color-fg)' }}>SingoTec</span>
+      </div>
+      <div style={{ display: 'flex', gap: 24, fontSize: 13, color: 'var(--color-fg-3)' }}>
+        <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Datenschutz</a>
+        <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Impressum</a>
+        <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Kontakt</a>
+      </div>
+      <span style={{ fontSize: 12, color: 'var(--color-fg-4)' }}>© 2025 SingoTec</span>
+    </div>
+  </footer>
+);
+
+
+
+
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "primaryColor": "#4648d4",
+  "showBranchen": true,
+  "darkCTA": true
+}/*EDITMODE-END*/;
+
+const App = () => {
+  const [tweakVals, setTweak] = useTweaks(TWEAK_DEFAULTS);
+
+  return (
+    <div>
+      <Nav />
+      <Hero />
+      <Features />
+      <Steps />
+      <Comparison />
+      {tweakVals.showBranchen && <Branchen />}
+      <FAQ />
+      <CTASection />
+      <Footer />
+      <TweaksPanel title="Tweaks">
+          <TweakSection label="Sektionen">
+            <TweakToggle label="Branchen-Sektion" value={tweakVals.showBranchen} onChange={v => setTweak('showBranchen', v)} />
+          </TweakSection>
+        </TweaksPanel>
+    </div>
+  );
+};
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>
