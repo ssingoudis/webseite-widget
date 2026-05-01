@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import ContactModal from "./ContactModal";
+import Logo from "./Logo";
 
 export default function Footer() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -10,12 +11,10 @@ export default function Footer() {
   return (
     <>
       <footer className="bg-surface border-t border-border px-6 py-10">
-        <div className="max-w-300 mx-auto flex flex-wrap items-center justify-between gap-4">
+        <div className="max-w-300 mx-auto flex flex-wrap items-center justify-center min-[400px]:justify-between gap-4">
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-[7px] bg-primary flex items-center justify-center text-white font-bold text-sm font-display">
-              S
-            </div>
-            <span className="font-semibold text-[15px] text-black">SingoTec</span>
+            <Logo className="w-9 h-9" />
+            <span className="font-semibold text-lg text-black">SingoTec</span>
           </div>
 
           <div className="flex gap-6 text-[13px] text-fg-3">
@@ -39,7 +38,7 @@ export default function Footer() {
             </button>
           </div>
 
-          <span className="text-[12px] text-fg-4">© 2025 SingoTec</span>
+          <span className="hidden min-[550px]:block text-[12px] text-fg-4">© 2025 SingoTec</span>
         </div>
       </footer>
 

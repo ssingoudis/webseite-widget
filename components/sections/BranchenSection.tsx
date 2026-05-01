@@ -1,4 +1,4 @@
-import { Sun, Thermometer, Flame, Droplets, Settings } from "lucide-react";
+import { Sun, Thermometer, Flame, Droplets, Settings, Users } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 type Status = "live" | "custom";
@@ -41,6 +41,14 @@ const branchen: {
     iconBg: "#ecfeff",
     label: "Sanitär & Bad",
     desc: "Badumbau, Notfall, Umfang — filtert ernsthafte Anfragen.",
+    status: "live",
+  },
+  {
+    Icon: Users,
+    iconColor: "#8b5cf6",
+    iconBg: "#f5f3ff",
+    label: "Recruiting",
+    desc: "Position, Erfahrung, Verfügbarkeit — qualifizierte Bewerbungen direkt im Postfach.",
     status: "live",
   },
   {

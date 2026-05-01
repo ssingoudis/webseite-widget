@@ -17,6 +17,7 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: clamp(14px, 1.2vw, 16px);
 }
 
 body {
@@ -27,4 +28,10 @@ body {
 ::selection {
   background-color: #4648d4;
   color: #fff;
+}
+
+@layer base {
+  button {
+    cursor: pointer;
+  }
 }
