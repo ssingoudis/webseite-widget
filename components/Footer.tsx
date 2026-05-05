@@ -17,7 +17,7 @@ export default function Footer() {
             <span className="font-semibold text-lg text-black">LeadPlug</span>
           </div>
 
-          <div className="flex gap-6 text-[13px] text-fg-3">
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-[13px] text-fg-3">
             <Link
               href="/datenschutz"
               className="text-fg-3 no-underline hover:text-black transition-colors duration-150"
@@ -29,6 +29,12 @@ export default function Footer() {
               className="text-fg-3 no-underline hover:text-black transition-colors duration-150"
             >
               Impressum
+            </Link>
+            <Link
+              href="/avv"
+              className="text-fg-3 no-underline hover:text-black transition-colors duration-150"
+            >
+              AVV
             </Link>
             <button
               onClick={() => setModalOpen(true)}

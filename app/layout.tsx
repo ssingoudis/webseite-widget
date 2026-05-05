@@ -33,6 +33,9 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="de" className={`${lora.variable} ${plusJakartaSans.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://solar-widget-two.vercel.app" />
+      </head>
       <body className="font-ui">
         <noscript>
           <iframe
