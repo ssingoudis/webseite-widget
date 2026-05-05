@@ -23,8 +23,7 @@ export default function HeroWidget() {
       ref={iframeRef}
       src="https://solar-widget-two.vercel.app/singotec-demo"
       style={{ width: "100%", border: "none", display: "block", height: "500px", overflow: "hidden" }}
-      loading="lazy"
-      title="SingoTec Demo-Widget"
+      title="LeadPlug Demo-Widget"
     />
   );
 }
