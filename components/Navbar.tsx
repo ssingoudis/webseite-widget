@@ -45,7 +45,7 @@ export default function Navbar() {
 
         <div className="hidden min-[330px]:block">
           <FunnelCTAButton
-            label="Kostenlos einrichten lassen"
+            label="Jetzt anfragen"
             className="bg-primary hover:bg-[#3538b8] text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-colors duration-150"
           />
         </div>

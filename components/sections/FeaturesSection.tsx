@@ -4,13 +4,13 @@ import type { LucideIcon } from "lucide-react";
 const features: { icon: LucideIcon; title: string; desc: string }[] = [
   {
     icon: Zap,
-    title: "Höhere Conversionrate",
-    desc: "Interaktive Funnels statt langweilige Kontaktformulare — Besucher bleiben dran und schließen ab.",
+    title: "Mehr Anfragen, bessere Qualität",
+    desc: "Interaktive Formulare statt starren Kontaktformularen — Besucher klicken sich durch statt abzuspringen.",
   },
   {
     icon: Palette,
-    title: "Dein Branding",
-    desc: "Farben, Texte, Logo — alles anpassbar. Das Widget sieht aus, als gehöre es zu deiner Seite.",
+    title: "Dein Design",
+    desc: "Farben, Logo, Texte — das Widget fügt sich nahtlos in deine Website ein.",
   },
   {
     icon: Code2,
@@ -19,7 +19,7 @@ const features: { icon: LucideIcon; title: string; desc: string }[] = [
   },
   {
     icon: Mail,
-    title: "Sofort Leads erhalten",
+    title: "Sofort Anfragen erhalten",
     desc: "Jede Anfrage landet strukturiert in deinem E-Mail-Postfach — mit allen Antworten auf einen Blick.",
   },
   {
@@ -30,7 +30,7 @@ const features: { icon: LucideIcon; title: string; desc: string }[] = [
   {
     icon: SlidersHorizontal,
     title: "Branchenspezifisch",
-    desc: "Vorkonfigurierte Fragen für Solar, Heizung, Sanitär & mehr. Du passt nur noch an.",
+    desc: "Vorkonfigurierte Fragen für deine Branche — wir richten alles auf deinen Betrieb ein.",
   },
 ];
 
