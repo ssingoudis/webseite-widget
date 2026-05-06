@@ -9,20 +9,20 @@ const steps: { num: string; icon: LucideIcon; title: string; desc: string }[] =
     {
       num: "01",
       icon: CalendarCheck,
-      title: "Termin vereinbaren",
-      desc: "Kurzes Einrichtungsgespräch — wir besprechen deine Branche, Zielgruppe und was du dir vorstellst.",
+      title: "Kurzes Gespräch",
+      desc: "Wir besprechen deine Branche und deine Zielgruppe — du sagst uns was du dir vorstellst.",
     },
     {
       num: "02",
       icon: SlidersHorizontal,
-      title: "Einrichtung inklusive",
-      desc: "Dein Lead-Funnel wird konfiguriert — Branding, Fragen, Logik. Du erhältst ein fertiges Widget, das nahtlos zu deiner Seite passt.",
+      title: "Fertig in 24 Stunden",
+      desc: "Ich baue deinen Funnel, du bekommst einen einzeiligen Code für deine Website.",
     },
     {
       num: "03",
       icon: MailCheck,
-      title: "Anfragen empfangen",
-      desc: "Das Widget geht live. Qualifizierte Leads landen strukturiert in deinem Postfach — sofort und ohne weiteren Aufwand.",
+      title: "Anfragen direkt per E-Mail",
+      desc: "Jede Anfrage landet sofort in deinem Postfach — strukturiert, ohne Aufwand.",
     },
   ];
 
@@ -84,7 +84,7 @@ export default function StepsSection() {
                 }}
               >
                 <div
-                  className="w-20 h-20 rounded-2xl mx-auto mb-5 flex items-center justify-center transition-all duration-[400ms]"
+                  className="w-20 h-20 rounded-2xl mx-auto mb-5 flex items-center justify-center transition-all duration-400"
                   style={{
                     background: isActive ? "#4648d4" : "#fff",
                     border: isActive ? "2px solid #4648d4" : "1px solid #e7e7ee",
@@ -103,7 +103,7 @@ export default function StepsSection() {
                 </div>
 
                 <span
-                  className="inline-block text-[11px] font-bold px-2.5 py-0.5 rounded mb-3 transition-all duration-[400ms]"
+                  className="inline-block text-[11px] font-bold px-2.5 py-0.5 rounded mb-3 transition-all duration-400"
                   style={{
                     background: isActive ? "#4648d4" : "#f0f0ff",
                     color: isActive ? "#fff" : "#4648d4",
@@ -120,7 +120,7 @@ export default function StepsSection() {
                 </p>
 
                 <div
-                  className="w-10 h-[3px] rounded-sm mx-auto mt-4 transition-colors duration-[400ms]"
+                  className="w-10 h-0.75 rounded-sm mx-auto mt-4 transition-colors duration-400"
                   style={{ background: isActive ? "#4648d4" : "transparent" }}
                 />
               </button>

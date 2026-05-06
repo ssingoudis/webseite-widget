@@ -20,13 +20,13 @@ export default function HeroSection() {
           </h1>
 
           <p className="text-[18px] leading-[1.6] text-fg-3 max-w-115 mb-8">
-            Verwandle Website-Besucher in qualifizierte Leads — mit einem
-            interaktiven Widget, individuell für deinen Betrieb eingerichtet.
+            Verwandle Webseiten-Besucher in Kundenanfragen — mit
+            einem interaktiven Widget, individuell für deinen Betrieb eingerichtet.
           </p>
 
           <div className="flex flex-wrap justify-center min-[900px]:justify-start items-center gap-3">
             <FunnelCTAButton
-              label="Kostenlos einrichten lassen"
+              label="Jetzt anfragen"
               className="inline-flex items-center gap-2 bg-primary hover:bg-[#3538b8] text-white px-7 py-3.5 rounded-full text-[15px] font-semibold transition-colors duration-150"
             />
             <a
@@ -49,17 +49,13 @@ export default function HeroSection() {
             </span>
             <span className="flex items-center gap-1">
               <CheckCircle2 size={16} className="text-[#22c55e]" />
-              Einsatzbereit in &lt;48h
+              Einsatzbereit in &lt;24h
             </span>
           </div>
         </div>
 
         {/* Right column — Widget */}
         <div className="flex flex-col items-center gap-3">
-          <div className="inline-flex items-center gap-2 bg-primary-light px-3.5 py-1.5 rounded-full text-[13px] font-semibold text-primary">
-            <span className="w-1.75 h-1.75 rounded-full bg-primary inline-block animate-pulse" />
-            Live-Demo — jetzt ausprobieren
-          </div>
           <div className="w-full min-[900px]:max-w-100 mx-3">
             <HeroWidget />
           </div>

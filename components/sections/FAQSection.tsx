@@ -10,7 +10,7 @@ const items = [
   },
   {
     q: "Was kostet LeadPlug?",
-    a: "Das erste Widget wird derzeit kostenlos eingerichtet — ohne Grundgebühr, ohne Vertragsbindung. Die genauen Konditionen besprechen wir im Einrichtungsgespräch.",
+    a: "Das erste Widget wird derzeit kostenlos eingerichtet. Wie es danach weitergeht, besprechen wir gemeinsam im Erstgespräch.",
   },
   {
     q: "Ist das DSGVO-konform?",
@@ -25,8 +25,8 @@ const items = [
     a: "Jede Anfrage wird dir sofort per E-Mail zugestellt — strukturiert mit allen Antworten des Besuchers auf einen Blick.",
   },
   {
-    q: "Kann ich das Widget an mein Branding anpassen?",
-    a: "Ja. Farben, Texte, Logo — alles wird auf dich abgestimmt. Das Widget sieht aus, als gehöre es nativ zu deiner Seite.",
+    q: "Kann ich das Widget an mein Design anpassen?",
+    a: "Ja. Farben, Logo, Texte — das Widget fügt sich nahtlos in deine Website ein.",
   },
 ];
 
@@ -34,7 +34,7 @@ export default function FAQSection() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-24 px-6 bg-surface">
+    <section id="faq" className="py-24 px-6">
       <div className="max-w-180 mx-auto">
         <div className="text-center mb-12">
           <span className="block text-[12px] font-bold uppercase tracking-[0.08em] text-primary mb-2">

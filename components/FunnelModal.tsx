@@ -57,7 +57,7 @@ export default function FunnelModal({
       >
         <iframe
           ref={iframeRef}
-          src="https://solar-widget-two.vercel.app/singotec-demo"
+          src="https://solar-widget-two.vercel.app/leadplug"
           style={{ width: "100%", border: "none", display: "block", height: "500px", overflow: "hidden" }}
           loading="lazy"
           title="SingoTec Lead-Funnel"

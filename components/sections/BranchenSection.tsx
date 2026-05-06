@@ -1,4 +1,4 @@
-import { Sun, Thermometer, Flame, Droplets, Settings, Users } from "lucide-react";
+import { Sun, Thermometer, Flame, Droplets, Settings, DoorOpen } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 type Status = "live" | "custom";
@@ -44,11 +44,11 @@ const branchen: {
     status: "live",
   },
   {
-    Icon: Users,
-    iconColor: "#8b5cf6",
-    iconBg: "#f5f3ff",
-    label: "Recruiting",
-    desc: "Position, Erfahrung, Verfügbarkeit — qualifizierte Bewerbungen direkt im Postfach.",
+    Icon: DoorOpen,
+    iconColor: "#0ea5e9",
+    iconBg: "#f0f9ff",
+    label: "Fenster & Türen",
+    desc: "Maß, Material, Anlass — strukturierte Anfragen vom ersten Klick.",
     status: "live",
   },
   {
@@ -69,8 +69,8 @@ const statusConfig: Record<Status, { bg: string; fg: string; label: string }> =
 
 export default function BranchenSection() {
   return (
-    <section id="branchen" className="py-24 px-6 bg-surface">
-      <div className="max-w-[1200px] mx-auto">
+    <section id="branchen" className="py-24 px-6">
+      <div className="max-w-300 mx-auto">
         <div className="text-center mb-14">
           <span className="block text-[12px] font-bold uppercase tracking-[0.08em] text-primary mb-2">
             BRANCHEN
@@ -81,9 +81,8 @@ export default function BranchenSection() {
           >
             Für jedes Handwerk das passende Formular
           </h2>
-          <p className="text-[16px] text-fg-3 mt-3 max-w-[520px] mx-auto">
-            Branchenspezifische Fragen, bereits vorkonfiguriert. Du passt
-            einfach an, was du brauchst.
+          <p className="text-[16px] text-fg-3 mt-3 max-w-130 mx-auto">
+            Branchenspezifische Fragen, bereits vorkonfiguriert — wir richten alles auf deinen Betrieb ein.
           </p>
         </div>
 
@@ -98,7 +97,7 @@ export default function BranchenSection() {
             return (
               <div
                 key={label}
-                className="p-6 rounded-2xl bg-white border border-border transition-shadow duration-250 hover:shadow-[0_4px_20px_rgba(0,0,0,0.06)]"
+                className="p-6 rounded-2xl bg-white border border-border transition-all duration-250 hover:shadow-[0_4px_24px_rgba(70,72,212,0.1)] hover:border-[#c8c8ff]"
               >
                 <div
                   className="w-10 h-10 rounded-[10px] flex items-center justify-center mb-3.5"
