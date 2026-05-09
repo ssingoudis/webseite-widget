@@ -3,8 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 
 const DEMOS = [
-  { label: "Solar", src: "https://solar-widget-two.vercel.app/demo-solar" },
-  { label: "Wärmepumpe", src: "https://solar-widget-two.vercel.app/demo-waermepumpe" },
+  { label: "Solar", src: "https://app.leadplug.de/demo-solar" },
+  { label: "Wärmepumpe", src: "https://app.leadplug.de/demo-waermepumpe" },
 ];
 
 export default function HeroWidget() {

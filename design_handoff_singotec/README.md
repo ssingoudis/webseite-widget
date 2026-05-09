@@ -31,7 +31,7 @@ The files in this bundle are **design references created in HTML/React** — pro
   - Interactive funnel demo in a browser-chrome card (3 colored dots header)
   - 3 question steps with icon grid (2x2), then contact form, then success state
   - Progress bar (amber/yellow) at bottom
-  - Later: replace with live iFrame: `<iframe src="https://solar-widget-two.vercel.app/demo">`
+  - Later: replace with live iFrame: `<iframe src="https://app.leadplug.de/demo">`
 
 ### 3. Features Section ("Warum SingoTec?")
 - Overline: "VORTEILE"

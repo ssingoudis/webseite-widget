@@ -13,7 +13,7 @@ Bitte Einträge nach Erledigung als ~~durchgestrichen~~ markieren oder löschen.
 Den Platzhalter-Block durch das echte iFrame ersetzen:
 ```html
 <iframe
-  src="https://solar-widget-two.vercel.app/demo"
+  src="https://app.leadplug.de/demo"
   width="100%"
   height="520"
   frameborder="0"

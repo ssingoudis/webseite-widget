@@ -36,7 +36,7 @@ const features: { icon: LucideIcon; title: string; desc: string }[] = [
 
 export default function FeaturesSection() {
   return (
-    <section id="features" className="py-24 px-6">
+    <section id="features" className="pt-16 pb-24 px-6">
       <div className="max-w-300 mx-auto">
         <div className="text-center mb-14">
           <span className="block text-[12px] font-bold uppercase tracking-[0.08em] text-primary mb-2">
