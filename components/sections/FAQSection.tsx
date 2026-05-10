@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
 
 const items = [
   {
@@ -31,7 +30,15 @@ const items = [
 ];
 
 export default function FAQSection() {
-  const [open, setOpen] = useState<number | null>(null);
+  const [openItems, setOpenItems] = useState<Set<number>>(new Set());
+
+  function toggle(i: number) {
+    setOpenItems((prev) => {
+      const next = new Set(prev);
+      next.has(i) ? next.delete(i) : next.add(i);
+      return next;
+    });
+  }
 
   return (
     <section id="faq" className="py-24 px-6">
@@ -41,41 +48,81 @@ export default function FAQSection() {
             FAQ
           </span>
           <h2
-            className="font-display font-semibold leading-[1.15] tracking-[-0.02em] text-black"
+            className="font-extrabold tracking-tight leading-[1.15] text-black"
             style={{ fontSize: "clamp(28px, 4vw, 42px)" }}
           >
             Häufige Fragen
           </h2>
         </div>
 
-        <div className="flex flex-col">
-          {items.map((item, i) => (
-            <div key={i} className="border-b border-border">
-              <button
-                onClick={() => setOpen(open === i ? null : i)}
-                className="w-full flex justify-between items-center py-5 bg-transparent border-0 cursor-pointer text-left gap-4"
-              >
-                <span className="text-[15px] font-semibold text-black">
-                  {item.q}
-                </span>
-                <ChevronDown
-                  size={20}
-                  className="text-[#999] shrink-0 transition-transform duration-200"
-                  style={{
-                    transform: open === i ? "rotate(180deg)" : "rotate(0deg)",
-                  }}
-                />
-              </button>
+        <div>
+          {items.map((item, i) => {
+            const isOpen = openItems.has(i);
+            return (
               <div
-                className="overflow-hidden transition-[max-height] duration-250 ease-in-out"
-                style={{ maxHeight: open === i ? "200px" : "0" }}
+                key={i}
+                className={`bg-white border rounded-2xl p-6 md:px-8 mb-4 transition-all duration-300 ${
+                  isOpen
+                    ? "border-slate-300 shadow-md"
+                    : "border-slate-200 shadow-none"
+                }`}
               >
-                <p className="text-[14px] leading-[1.6] text-fg-3 pb-5 m-0">
-                  {item.a}
-                </p>
+                <button
+                  onClick={() => toggle(i)}
+                  className="w-full flex justify-between items-center bg-transparent border-0 text-left gap-6"
+                >
+                  <span className="text-lg font-bold text-slate-900">
+                    {item.q}
+                  </span>
+
+                  <div className="relative w-5 h-5 shrink-0">
+                    {/* Plus */}
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className={`absolute inset-0 w-full h-full transition-all duration-300 ${
+                        isOpen
+                          ? "opacity-0 rotate-90 scale-75 text-slate-900"
+                          : "opacity-100 rotate-0 scale-100 text-slate-400"
+                      }`}
+                    >
+                      <path d="M5 12h14" />
+                      <path d="M12 5v14" />
+                    </svg>
+                    {/* Minus */}
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className={`absolute inset-0 w-full h-full transition-all duration-300 text-slate-900 ${
+                        isOpen
+                          ? "opacity-100 rotate-0 scale-100"
+                          : "opacity-0 -rotate-90 scale-75"
+                      }`}
+                    >
+                      <path d="M5 12h14" />
+                    </svg>
+                  </div>
+                </button>
+
+                <div
+                  className="overflow-hidden transition-[max-height] duration-300 ease-in-out"
+                  style={{ maxHeight: isOpen ? "400px" : "0" }}
+                >
+                  <p className="text-[15px] leading-[1.6] text-slate-600 mt-4 m-0">
+                    {item.a}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

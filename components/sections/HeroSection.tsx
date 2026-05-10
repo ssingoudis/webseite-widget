@@ -40,7 +40,7 @@ export default function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4 mb-10 items-center lg:items-start">
               <FunnelCTAButton
                 label="Jetzt anfragen"
-                className="w-full lg:w-auto max-w-105 lg:max-w-none inline-flex justify-center items-center gap-2 px-8 py-3.5 text-base font-bold text-white bg-primary hover:bg-[#3538b8] rounded-xl shadow-md transition-all"
+                className="w-full lg:w-auto max-w-105 lg:max-w-none inline-flex justify-center items-center gap-2 px-8 py-3.5 text-base font-bold text-white bg-primary hover:bg-primary-dark rounded-xl shadow-md transition-all"
               />
               <a
                 href="#schritte"

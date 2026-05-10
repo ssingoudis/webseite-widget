@@ -24,7 +24,7 @@ export default function LockedPage() {
         action={unlock}
         className="flex flex-col gap-4 p-8 bg-white rounded-xl shadow-md w-full max-w-sm"
       >
-        <h1 className="font-display text-2xl text-fg-2">Zugang</h1>
+        <h1 className="font-bold tracking-tight text-2xl text-fg-2">Zugang</h1>
         <input
           type="password"
           name="password"

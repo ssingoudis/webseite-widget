@@ -9,7 +9,7 @@ export default function HeroSection() {
         {/* Left column */}
         <div className="flex flex-col items-center min-[900px]:items-start text-center min-[900px]:text-left">
           <h1
-            className="font-display font-semibold leading-[1.1] tracking-[-0.03em] text-black mb-10"
+            className="font-extrabold tracking-tight leading-[1.1] text-black mb-10"
             style={{ fontSize: "clamp(36px, 5vw, 56px)" }}
           >
             Mehr Anfragen.
@@ -27,7 +27,7 @@ export default function HeroSection() {
           <div className="flex flex-wrap justify-center min-[900px]:justify-start items-center gap-3">
             <FunnelCTAButton
               label="Jetzt anfragen"
-              className="inline-flex items-center gap-2 bg-primary hover:bg-[#3538b8] text-white px-7 py-3.5 rounded-full text-[15px] font-semibold transition-colors duration-150"
+              className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-7 py-3.5 rounded-full text-[15px] font-semibold transition-colors duration-150"
             />
             <a
               href="#schritte"

@@ -59,7 +59,7 @@ export default function StepsSection() {
             SO FUNKTIONIERT'S
           </span>
           <h2
-            className="font-display font-semibold leading-[1.15] tracking-[-0.02em] text-black"
+            className="font-extrabold tracking-tight leading-[1.15] text-black"
             style={{ fontSize: "clamp(28px, 4vw, 42px)" }}
           >
             In 3 Schritten zu mehr Anfragen
@@ -86,17 +86,17 @@ export default function StepsSection() {
                 <div
                   className="w-20 h-20 rounded-2xl mx-auto mb-5 flex items-center justify-center transition-all duration-400"
                   style={{
-                    background: isActive ? "#4648d4" : "#fff",
-                    border: isActive ? "2px solid #4648d4" : "1px solid #e7e7ee",
+                    background: isActive ? "var(--color-primary)" : "#fff",
+                    border: isActive ? "2px solid var(--color-primary)" : "1px solid var(--color-border)",
                     boxShadow: isActive
-                      ? "0 4px 24px rgba(70,72,212,0.25)"
+                      ? "0 4px 24px color-mix(in srgb, var(--color-primary) 25%, transparent)"
                       : "0 2px 8px rgba(0,0,0,0.04)",
                   }}
                 >
                   <Icon
                     size={36}
                     style={{
-                      color: isActive ? "#fff" : "#4648d4",
+                      color: isActive ? "#fff" : "var(--color-primary)",
                       transition: "color 400ms",
                     }}
                   />
@@ -105,8 +105,8 @@ export default function StepsSection() {
                 <span
                   className="inline-block text-[11px] font-bold px-2.5 py-0.5 rounded mb-3 transition-all duration-400"
                   style={{
-                    background: isActive ? "#4648d4" : "#f0f0ff",
-                    color: isActive ? "#fff" : "#4648d4",
+                    background: isActive ? "var(--color-primary)" : "var(--color-primary-light)",
+                    color: isActive ? "#fff" : "var(--color-primary)",
                   }}
                 >
                   {step.num}
@@ -121,7 +121,7 @@ export default function StepsSection() {
 
                 <div
                   className="w-10 h-0.75 rounded-sm mx-auto mt-4 transition-colors duration-400"
-                  style={{ background: isActive ? "#4648d4" : "transparent" }}
+                  style={{ background: isActive ? "var(--color-primary)" : "transparent" }}
                 />
               </button>
             );

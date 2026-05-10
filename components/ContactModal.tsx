@@ -109,7 +109,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 <polyline points="20 6 9 17 4 12" />
               </svg>
             </div>
-            <h2 className="font-display text-[20px] font-semibold text-black mb-2">
+            <h2 className="font-bold tracking-tight text-[20px] text-black mb-2">
               Nachricht gesendet
             </h2>
             <p className="text-fg-3 text-sm mb-6">
@@ -117,7 +117,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
             </p>
             <button
               onClick={handleReset}
-              className="bg-primary hover:bg-[#3538b8] text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-colors duration-150"
+              className="bg-primary hover:bg-primary-dark text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-colors duration-150"
             >
               Schließen
             </button>
@@ -126,7 +126,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
           <>
             <h2
               id="modal-title"
-              className="font-display text-[22px] font-semibold tracking-[-0.02em] text-black mb-1"
+              className="font-bold tracking-tight text-[22px] text-black mb-1"
             >
               Kontakt aufnehmen
             </h2>
@@ -219,7 +219,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
               <button
                 type="submit"
                 disabled={status === "loading" || !dsgvo}
-                className="bg-primary hover:bg-[#3538b8] disabled:opacity-50 disabled:cursor-not-allowed text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-colors duration-150 mt-1"
+                className="bg-primary hover:bg-primary-dark disabled:opacity-50 disabled:cursor-not-allowed text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-colors duration-150 mt-1"
               >
                 {status === "loading" ? "Wird gesendet…" : "Nachricht senden"}
               </button>
