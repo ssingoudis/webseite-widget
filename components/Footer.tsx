@@ -1,12 +1,16 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
-import ContactModal from "./ContactModal";
 import Logo from "./Logo";
+import ContactModal from "./ContactModal";
+import LegalModal from "./LegalModal";
+
+type LegalType = "impressum" | "datenschutz" | "avv";
 
 export default function Footer() {
-  const [modalOpen, setModalOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
+  const [legalModal, setLegalModal] = useState<LegalType | null>(null);
+
 
   return (
     <>
@@ -20,26 +24,26 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-[13px]">
-            <Link
-              href="/datenschutz"
-              className="text-slate-400 no-underline hover:text-white transition-colors duration-150"
+            <button
+              onClick={() => setLegalModal("datenschutz")}
+              className="text-slate-400 hover:text-white transition-colors duration-150 bg-transparent border-none p-0 cursor-pointer text-[13px]"
             >
               Datenschutz
-            </Link>
-            <Link
-              href="/impressum"
-              className="text-slate-400 no-underline hover:text-white transition-colors duration-150"
+            </button>
+            <button
+              onClick={() => setLegalModal("impressum")}
+              className="text-slate-400 hover:text-white transition-colors duration-150 bg-transparent border-none p-0 cursor-pointer text-[13px]"
             >
               Impressum
-            </Link>
-            <Link
-              href="/avv"
-              className="text-slate-400 no-underline hover:text-white transition-colors duration-150"
+            </button>
+            <button
+              onClick={() => setLegalModal("avv")}
+              className="text-slate-400 hover:text-white transition-colors duration-150 bg-transparent border-none p-0 cursor-pointer text-[13px]"
             >
               AVV
-            </Link>
+            </button>
             <button
-              onClick={() => setModalOpen(true)}
+              onClick={() => setContactOpen(true)}
               className="text-slate-400 hover:text-white transition-colors duration-150 bg-transparent border-none p-0 cursor-pointer text-[13px]"
             >
               Kontakt
@@ -50,7 +54,8 @@ export default function Footer() {
         </div>
       </footer>
 
-      <ContactModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
+      <ContactModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
+      <LegalModal type={legalModal} onClose={() => setLegalModal(null)} />
     </>
   );
 }
