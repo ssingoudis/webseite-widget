@@ -13,7 +13,7 @@ export default function ImpressumPage() {
       <Navbar />
       <main className="pt-16 min-h-screen">
         <div className="max-w-3xl mx-auto px-6 py-24 text-fg-2 hyphens-auto">
-          <h1 className="font-display text-[32px] font-semibold tracking-[-0.02em] text-black mb-10">
+          <h1 className="font-extrabold tracking-tight text-[32px] text-black mb-10">
             Impressum
           </h1>
 

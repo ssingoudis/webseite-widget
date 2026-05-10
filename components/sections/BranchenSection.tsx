@@ -76,7 +76,7 @@ export default function BranchenSection() {
             BRANCHEN
           </span>
           <h2
-            className="font-display font-semibold leading-[1.15] tracking-[-0.02em] text-black"
+            className="font-extrabold tracking-tight leading-[1.15] text-black"
             style={{ fontSize: "clamp(28px, 4vw, 42px)" }}
           >
             Für jedes Handwerk das passende Formular
@@ -108,7 +108,7 @@ export default function BranchenSection() {
                 <h4 className="text-[15px] font-semibold text-black mb-1.5">
                   {label}
                 </h4>
-                <p className="text-[13px] leading-[1.5] text-fg-3 mb-3.5">
+                <p className="text-[13px] leading-normal text-fg-3 mb-3.5">
                   {desc}
                 </p>
                 <span

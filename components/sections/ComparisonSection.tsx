@@ -1,95 +1,101 @@
-import { Home, Building2, MoreHorizontal, Square } from "lucide-react";
-
 export default function ComparisonSection() {
   return (
-    <section className="py-20 px-6">
-      <div className="max-w-[800px] mx-auto">
-        <div className="text-center mb-12">
-          <h2
-            className="font-display font-semibold leading-[1.15] tracking-[-0.02em] text-black"
-            style={{ fontSize: "clamp(28px, 4vw, 42px)" }}
-          >
-            Welches Formular würdest du ausfüllen?
+    <section className="py-32 px-6 text-slate-900">
+      <div className="container mx-auto max-w-5xl">
+
+        {/* Headline */}
+        <div className="text-center mb-24">
+          <p className="text-primary font-bold tracking-widest text-sm uppercase mb-4">Zahlen lügen nicht</p>
+          <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold tracking-tight text-slate-900 mb-6 leading-[1.1]">
+            Bis zu 377% mehr Leads <br className="hidden md:block" />
+            für deinen Betrieb
           </h2>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+            Die Mathematik spricht für sich. Analysen von{" "}
+            <span className="font-bold text-slate-800">HubSpot</span> und{" "}
+            <span className="font-bold text-slate-800">Venture Harbour</span>{" "}
+            beweisen: Während klassische Formulare im Schnitt bei 9% abbrechen,
+            erreichen interaktive Multi-Step-Funnel bis zu 43%. Das ist eine
+            reale Steigerung von 377% aus demselben Website-Traffic.
+          </p>
         </div>
 
-        <div className="flex gap-7 flex-wrap items-stretch">
-          {/* Boring contact form */}
-          <div
-            className="flex-1 basis-[300px] rounded-2xl overflow-hidden border border-[#e8e8e8] bg-[#f6f6f6] flex flex-col"
-            style={{ opacity: 0.7 }}
-          >
-            <div className="p-6 flex-1 flex flex-col gap-2.5">
-              {["Name *", "E-Mail *", "Telefon", "Betreff"].map((f) => (
-                <div key={f}>
-                  <div className="text-[10px] text-[#aaa] mb-1">{f}</div>
-                  <div className="h-[30px] bg-white rounded-[5px] border border-[#ddd]" />
+        {/* Charts */}
+        <div className="grid md:grid-cols-2 gap-24 md:gap-16 max-w-4xl mx-auto items-center">
+
+          {/* Chart 1: Standard Formular (9%) */}
+          <div className="flex flex-col items-center">
+            <h3 className="text-xl font-semibold text-slate-500 mb-12">Standard Formular</h3>
+
+            <div className="relative w-64 h-64 md:w-[320px] md:h-[320px] flex items-center justify-center mx-auto group cursor-default transition-all duration-500 ease-out hover:scale-105">
+
+              <div className="absolute inset-[10%] bg-linear-to-br from-white to-slate-50 rounded-full border border-slate-100 transition-all duration-500 shadow-[0_15px_35px_-10px_rgba(0,0,0,0.1)] group-hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.2)]" />
+
+              <svg className="absolute inset-0 w-full h-full drop-shadow-[0_8px_12px_rgba(0,0,0,0.15)]" viewBox="0 0 300 300">
+                <path d="M 150 150 L 150 20 A 130 130 0 0 1 219.65 40.24 Z" fill="#64748b" />
+              </svg>
+
+              <div className="absolute w-[50%] h-[50%] bg-white rounded-full shadow-[0_15px_35px_-5px_rgba(0,0,0,0.25)] flex items-center justify-center z-20 border border-slate-50">
+                <div className="w-[55%] h-[70%] bg-slate-50 border border-slate-200 rounded-lg p-2 md:p-2.5 flex flex-col gap-1.5 shadow-sm transform -rotate-2">
+                  <div className="w-2/3 h-1.5 md:h-2 bg-slate-300 rounded-xs mb-1" />
+                  <div className="w-full h-2.5 md:h-3 bg-white border border-slate-200 rounded-[3px]" />
+                  <div className="w-full h-2.5 md:h-3 bg-white border border-slate-200 rounded-[3px]" />
+                  <div className="w-full h-2.5 md:h-3 bg-white border border-slate-200 rounded-[3px]" />
+                  <div className="w-full h-6 md:h-8 bg-white border border-slate-200 rounded-[3px]" />
+                  <div className="w-full h-3 md:h-4 bg-slate-400 rounded-[3px] mt-auto" />
                 </div>
-              ))}
-              <div>
-                <div className="text-[10px] text-[#aaa] mb-1">
-                  Ihre Nachricht...
-                </div>
-                <div className="h-14 bg-white rounded-[5px] border border-[#ddd]" />
               </div>
-              <div className="h-[34px] bg-[#bbb] rounded-[6px] mt-2 flex items-center justify-center text-[11px] text-white font-semibold">
-                Absenden
+
+              <div className="absolute top-[8%] right-[-2%] md:top-[12%] md:right-[-5%] bg-white border border-slate-100 rounded-2xl shadow-xl z-30 px-5 py-2.5 transform group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+                <span className="text-slate-600 font-black text-2xl md:text-3xl tracking-tight">9%</span>
               </div>
-            </div>
-            <div className="py-3 text-center text-[13px] font-semibold text-[#999] border-t border-[#e8e8e8] bg-[#f0f0f0]">
-              Kontaktformular
+
             </div>
           </div>
 
-          {/* Interactive funnel */}
-          <div
-            className="flex-1 basis-[300px] rounded-2xl overflow-hidden border-2 border-primary bg-[#fafaff] flex flex-col"
-            style={{ boxShadow: "0 4px 24px rgba(70,72,212,0.12)" }}
-          >
-            <div className="p-6 flex-1">
-              <div className="text-[14px] font-semibold text-center mb-4 text-black">
-                Welches Dach haben Sie?
+          {/* Chart 2: LeadPlug Funnel (43%) */}
+          <div className="flex flex-col items-center">
+            <h3 className="text-xl font-bold text-primary mb-12">LeadPlug Funnel</h3>
+
+            <div className="relative w-64 h-64 md:w-[320px] md:h-[320px] flex items-center justify-center mx-auto group cursor-default transition-all duration-500 ease-out hover:scale-105">
+
+              <div className="absolute inset-[10%] bg-primary rounded-full blur-[60px] opacity-30 -z-10 group-hover:opacity-50 transition-opacity duration-700" />
+
+              <div className="absolute inset-[10%] bg-linear-to-br from-white to-slate-50 rounded-full border border-primary-light transition-all duration-500 shadow-[0_15px_40px_-10px_rgba(0,0,0,0.15)] group-hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.25)]" />
+
+              <svg className="absolute inset-0 w-full h-full drop-shadow-[0_12px_16px_rgba(0,0,0,0.15)]" viewBox="0 0 300 300">
+                <path className="fill-primary" d="M 150 150 L 150 20 A 130 130 0 0 1 205.3 267.6 Z" />
+              </svg>
+
+              <div className="absolute w-[50%] h-[50%] bg-white rounded-full shadow-[0_20px_40px_-5px_rgba(0,0,0,0.35)] flex items-center justify-center z-20 border border-slate-50">
+                <div className="w-[60%] h-[60%] bg-linear-to-br from-primary to-primary-dark rounded-2xl md:rounded-3xl shadow-[inset_0_2px_10px_rgba(255,255,255,0.3)] flex items-center justify-center text-white transform rotate-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="md:w-10 md:h-10">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="currentColor" />
+                  </svg>
+                </div>
               </div>
-              <div className="grid grid-cols-2 gap-2">
-                {[
-                  { label: "Satteldach", Icon: Home, active: true },
-                  { label: "Flachdach", Icon: Square, active: false },
-                  { label: "Pultdach", Icon: Building2, active: false },
-                  { label: "Sonstiges", Icon: MoreHorizontal, active: false },
-                ].map(({ label, Icon, active }) => (
-                  <div
-                    key={label}
-                    className="py-3.5 px-2 rounded-[10px] text-center flex flex-col items-center gap-1"
-                    style={{
-                      border: active ? "2px solid #4648d4" : "1px solid #dde",
-                      background: active ? "#eeeeff" : "#fff",
-                    }}
-                  >
-                    <Icon
-                      size={22}
-                      style={{ color: active ? "#4648d4" : "#888" }}
-                    />
-                    <span
-                      className="text-[12px] font-medium"
-                      style={{ color: active ? "#4648d4" : "#666" }}
-                    >
-                      {label}
-                    </span>
-                  </div>
-                ))}
+
+              <div className="absolute top-[8%] right-[-2%] md:top-[12%] md:right-[-5%] bg-white border border-primary-light rounded-2xl shadow-2xl z-30 px-6 py-3 transform group-hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+                <span className="text-primary font-black text-3xl md:text-4xl tracking-tight">43%</span>
               </div>
-              <div className="h-[5px] bg-[#e8e8f0] rounded mt-4 overflow-hidden">
-                <div
-                  className="h-full bg-[#f59e0b] rounded"
-                  style={{ width: "33%" }}
-                />
-              </div>
-            </div>
-            <div className="py-3 text-center text-[13px] font-semibold text-primary border-t border-[#e0e4ff] bg-primary-light">
-              Interaktiver Funnel
+
             </div>
           </div>
+
         </div>
+
+        {/* Bottom CTA */}
+        <div className="text-center mt-28 relative z-20">
+          <button className="inline-flex justify-center items-center px-10 py-5 text-lg font-bold text-white bg-primary rounded-2xl shadow-xl shadow-primary/30 hover:bg-primary-dark hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/40 transition-all duration-300 group">
+            Jetzt Leads verdreifachen
+            <svg xmlns="http://www.w3.org/2000/svg" className="ml-3 w-6 h-6 group-hover:translate-x-1.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </button>
+          <p className="mt-6 text-sm font-semibold text-slate-500">Kostenloses Erstgespräch. 100% unverbindlich.</p>
+        </div>
+
       </div>
     </section>
   );

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section className="mt-10">
-      <h2 className="font-display text-[18px] font-semibold text-black mb-3">{title}</h2>
+      <h2 className="font-bold tracking-tight text-[18px] text-black mb-3">{title}</h2>
       <div className="text-fg-3 text-[15px] leading-relaxed space-y-3">{children}</div>
     </section>
   );
@@ -22,7 +22,7 @@ export default function AvvPage() {
       <Navbar />
       <main className="pt-16 min-h-screen">
         <div className="max-w-3xl mx-auto px-6 py-24 hyphens-auto">
-          <h1 className="font-display text-[32px] font-semibold tracking-[-0.02em] text-black mb-2">
+          <h1 className="font-extrabold tracking-tight text-[32px] text-black mb-2">
             Auftragsverarbeitungsvertrag (AVV)
           </h1>
           <p className="text-fg-4 text-sm mb-2">Stand: Mai 2026 · Version 1.0</p>

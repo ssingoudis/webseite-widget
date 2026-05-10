@@ -43,7 +43,7 @@ export default function FeaturesSection() {
             VORTEILE
           </span>
           <h2
-            className="font-display font-semibold leading-[1.15] tracking-[-0.02em] text-black"
+            className="font-extrabold tracking-tight leading-[1.15] text-black"
             style={{ fontSize: "clamp(28px, 4vw, 42px)" }}
           >
             Warum LeadPlug?
