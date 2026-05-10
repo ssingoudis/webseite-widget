@@ -23,16 +23,16 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "SingoTec — Mehr Anfragen für Handwerksbetriebe",
+  title: "LeadPlug – Mehr Anfragen für Handwerksbetriebe",
   description:
-    "Individuelle Lead-Widgets für Handwerksbetriebe — DSGVO-konform, einsatzbereit in unter 48h, kostenlos eingerichtet.",
+    "Interaktive Anfrage-Funnels für Handwerksbetriebe — DSGVO-konform, einsatzbereit in unter 48h, kostenlos eingerichtet.",
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="de" className={`${lora.variable} ${plusJakartaSans.variable}`}>
+    <html lang="de" data-scroll-behavior="smooth" className={`${lora.variable} ${plusJakartaSans.variable}`}>
       <head>
         <link rel="preconnect" href="https://solar-widget-two.vercel.app" />
       </head>

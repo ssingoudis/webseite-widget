@@ -13,7 +13,9 @@ export default function Footer() {
       <footer className="bg-slate-900 border-t border-slate-800 px-6 py-10">
         <div className="max-w-300 mx-auto flex flex-col min-[550px]:flex-row items-center min-[550px]:justify-between gap-3 min-[550px]:gap-4">
           <div className="flex items-center gap-2">
-            <Logo className="w-9 h-9" />
+            <div className="w-8 h-8 rounded-lg bg-primary text-white flex items-center justify-center shrink-0">
+              <Logo className="w-7 h-7" />
+            </div>
             <span className="font-semibold text-lg text-white">LeadPlug</span>
           </div>
 

@@ -1,3 +1,5 @@
+import Logo from "@/components/Logo";
+
 export default function ComparisonSection() {
   return (
     <section className="py-32 px-6 text-slate-900">
@@ -69,9 +71,7 @@ export default function ComparisonSection() {
 
               <div className="absolute w-[50%] h-[50%] bg-white rounded-full shadow-[0_20px_40px_-5px_rgba(0,0,0,0.35)] flex items-center justify-center z-20 border border-slate-50">
                 <div className="w-[60%] h-[60%] bg-linear-to-br from-primary to-primary-dark rounded-2xl md:rounded-3xl shadow-[inset_0_2px_10px_rgba(255,255,255,0.3)] flex items-center justify-center text-white transform rotate-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="md:w-10 md:h-10">
-                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" fill="currentColor" />
-                  </svg>
+                  <Logo className="w-14 h-14 md:w-16 md:h-16" />
                 </div>
               </div>
 
