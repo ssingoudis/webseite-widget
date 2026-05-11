@@ -29,8 +29,13 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
     window.addEventListener("keydown", onKey);
     document.body.style.overflow = "hidden";
 
+    window.history.pushState({ modal: true }, "");
+    const onPop = () => onClose();
+    window.addEventListener("popstate", onPop);
+
     return () => {
       window.removeEventListener("keydown", onKey);
+      window.removeEventListener("popstate", onPop);
       document.body.style.overflow = "";
     };
   }, [isOpen, onClose]);

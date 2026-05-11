@@ -27,13 +27,19 @@ export default function FunnelModal({
   }, []);
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
+    if (!isOpen) {
       document.body.style.overflow = "";
+      return;
     }
-    return () => { document.body.style.overflow = ""; };
-  }, [isOpen]);
+    document.body.style.overflow = "hidden";
+    window.history.pushState({ modal: true }, "");
+    const onPop = () => onClose();
+    window.addEventListener("popstate", onPop);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("popstate", onPop);
+    };
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
