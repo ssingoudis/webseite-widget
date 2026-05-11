@@ -69,9 +69,9 @@ export default function FAQSection() {
               >
                 <button
                   onClick={() => toggle(i)}
-                  className="w-full flex justify-between items-center bg-transparent border-0 text-left gap-6"
+                  className="w-full flex justify-between items-center bg-transparent border-0 text-left gap-4"
                 >
-                  <span className="text-lg font-bold text-slate-900">
+                  <span className="text-lg font-bold text-slate-900 min-w-0 wrap-break-word">
                     {item.q}
                   </span>
 

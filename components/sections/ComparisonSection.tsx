@@ -21,7 +21,7 @@ export default function ComparisonSection() {
         </div>
 
         {/* Charts */}
-        <div className="grid md:grid-cols-2 gap-16 md:gap-24 max-w-3xl mx-auto items-start">
+        <div className="grid sm:grid-cols-2 gap-16 sm:gap-20 md:gap-24 max-w-3xl mx-auto items-start">
 
           {/* Chart 1: Standard Formular (9%) */}
           <div className="flex flex-col items-center">
