@@ -1,5 +1,6 @@
 import { ArrowRight, Home, Building2, Sun, LayoutDashboard, ChevronLeft } from "lucide-react";
 import FunnelCTAButton from "@/components/FunnelCTAButton";
+import SmoothScrollLink from "@/components/SmoothScrollLink";
 
 export default function HeroSection() {
   return (
@@ -11,7 +12,7 @@ export default function HeroSection() {
         <div className="absolute top-0 right-0 w-150 h-150 bg-primary-light/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3" />
       </div>
 
-      <div className="container relative z-10 mx-auto px-6 max-w-7xl">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 max-w-7xl">
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-16 items-center">
 
           {/* Linke Spalte */}
@@ -26,7 +27,7 @@ export default function HeroSection() {
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold tracking-tight text-slate-900 mb-6 leading-[1.1] text-balance">
               Mehr Aufträge durch{" "}
-              <span className="text-primary whitespace-nowrap">qualifizierte Anfragen</span>
+              <span className="text-primary">qualifizierte Anfragen</span>
             </h1>
 
             {/* Subheadline */}
@@ -42,13 +43,13 @@ export default function HeroSection() {
                 label="Jetzt anfragen"
                 className="w-full lg:w-auto max-w-105 lg:max-w-none inline-flex justify-center items-center gap-2 px-8 py-3.5 text-base font-bold text-white bg-primary hover:bg-primary-dark rounded-xl shadow-md transition-all"
               />
-              <a
-                href="#schritte"
+              <SmoothScrollLink
+                target="schritte"
                 className="w-full lg:w-auto max-w-105 lg:max-w-none inline-flex justify-center items-center gap-2 px-8 py-3.5 text-base font-bold text-slate-700 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm"
               >
                 So funktioniert&apos;s
                 <ArrowRight size={18} />
-              </a>
+              </SmoothScrollLink>
             </div>
 
             {/* Trust-Badges */}
@@ -80,34 +81,34 @@ export default function HeroSection() {
           <div className="mt-8 lg:mt-0">
 
             {/* Funnel-Karte (nicht klickbar) */}
-            <div className="relative bg-white rounded-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] border border-slate-100/50 p-6 z-10 mx-auto max-w-125 select-none">
+            <div className="relative bg-white rounded-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] border border-slate-100/50 p-4 sm:p-6 z-10 mx-auto max-w-125 select-none">
 
-              <div className="mb-6">
-                <h3 className="text-xl font-bold text-slate-900 text-center">
+              <div className="mb-4 sm:mb-6">
+                <h3 className="text-base sm:text-xl font-bold text-slate-900 text-center">
                   Worauf soll die Anlage installiert werden?
                 </h3>
               </div>
 
-              <div className="grid grid-cols-2 gap-4 mb-8">
+              <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-6 sm:mb-8">
                 {/* Schrägdach — aktiv */}
-                <div className="flex flex-col items-center justify-center py-6 px-4 border-2 border-primary rounded-xl bg-primary-light/40 shadow-sm">
-                  <Home size={36} className="text-primary mb-3" />
-                  <span className="text-sm font-bold text-slate-900">Schrägdach</span>
+                <div className="flex flex-col items-center justify-center py-3 sm:py-6 px-2 sm:px-4 border-2 border-primary rounded-xl bg-primary-light/40 shadow-sm">
+                  <Home size={24} className="text-primary mb-2 sm:mb-3 sm:w-9 sm:h-9" />
+                  <span className="text-xs sm:text-sm font-bold text-slate-900">Schrägdach</span>
                 </div>
                 {/* Flachdach */}
-                <div className="flex flex-col items-center justify-center py-6 px-4 border-2 border-slate-100 hover:border-primary/40 hover:bg-primary-light/20 rounded-xl bg-white shadow-sm cursor-pointer transition-colors duration-150">
-                  <Building2 size={36} className="text-slate-400 mb-3" />
-                  <span className="text-sm font-semibold text-slate-700">Flachdach</span>
+                <div className="flex flex-col items-center justify-center py-3 sm:py-6 px-2 sm:px-4 border-2 border-slate-100 hover:border-primary/40 hover:bg-primary-light/20 rounded-xl bg-white shadow-sm cursor-pointer transition-colors duration-150">
+                  <Building2 size={24} className="text-slate-400 mb-2 sm:mb-3 sm:w-9 sm:h-9" />
+                  <span className="text-xs sm:text-sm font-semibold text-slate-700">Flachdach</span>
                 </div>
                 {/* Freifläche */}
-                <div className="flex flex-col items-center justify-center py-6 px-4 border-2 border-slate-100 hover:border-primary/40 hover:bg-primary-light/20 rounded-xl bg-white shadow-sm cursor-pointer transition-colors duration-150">
-                  <Sun size={36} className="text-slate-400 mb-3" />
-                  <span className="text-sm font-semibold text-slate-700">Freifläche</span>
+                <div className="flex flex-col items-center justify-center py-3 sm:py-6 px-2 sm:px-4 border-2 border-slate-100 hover:border-primary/40 hover:bg-primary-light/20 rounded-xl bg-white shadow-sm cursor-pointer transition-colors duration-150">
+                  <Sun size={24} className="text-slate-400 mb-2 sm:mb-3 sm:w-9 sm:h-9" />
+                  <span className="text-xs sm:text-sm font-semibold text-slate-700">Freifläche</span>
                 </div>
                 {/* Wandmontage */}
-                <div className="flex flex-col items-center justify-center py-6 px-4 border-2 border-slate-100 hover:border-primary/40 hover:bg-primary-light/20 rounded-xl bg-white shadow-sm cursor-pointer transition-colors duration-150">
-                  <LayoutDashboard size={36} className="text-slate-400 mb-3" />
-                  <span className="text-sm font-semibold text-slate-700">Wandmontage</span>
+                <div className="flex flex-col items-center justify-center py-3 sm:py-6 px-2 sm:px-4 border-2 border-slate-100 hover:border-primary/40 hover:bg-primary-light/20 rounded-xl bg-white shadow-sm cursor-pointer transition-colors duration-150">
+                  <LayoutDashboard size={24} className="text-slate-400 mb-2 sm:mb-3 sm:w-9 sm:h-9" />
+                  <span className="text-xs sm:text-sm font-semibold text-slate-700">Wandmontage</span>
                 </div>
               </div>
 
@@ -126,7 +127,7 @@ export default function HeroSection() {
 
               {/* Schwebende Benachrichtigung — klebt an der Karte */}
               <div
-                className="absolute -bottom-9 -left-5 z-20 bg-white px-5 py-4 rounded-xl shadow-2xl shadow-slate-200/60 border border-slate-100 flex items-center gap-4"
+                className="absolute -bottom-9 left-2 sm:-left-5 z-20 bg-white px-3 py-3 sm:px-5 sm:py-4 rounded-xl shadow-2xl shadow-slate-200/60 border border-slate-100 flex items-center gap-3 sm:gap-4"
                 style={{ animation: "float-badge 4s ease-in-out infinite" }}
               >
                 <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-lg border border-green-200">

@@ -41,7 +41,7 @@ export default function FAQSection() {
   }
 
   return (
-    <section id="faq" className="py-24 px-6">
+    <section id="faq" className="py-14 md:py-24 px-6">
       <div className="max-w-180 mx-auto">
         <div className="text-center mb-12">
           <span className="block text-[12px] font-bold uppercase tracking-[0.08em] text-primary mb-2">

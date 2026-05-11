@@ -7,9 +7,11 @@ import { X } from "lucide-react";
 export default function FunnelModal({
   isOpen,
   onClose,
+  src = "https://app.leadplug.de/leadplug",
 }: {
   isOpen: boolean;
   onClose: () => void;
+  src?: string;
 }) {
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
@@ -63,10 +65,11 @@ export default function FunnelModal({
       >
         <iframe
           ref={iframeRef}
-          src="https://app.leadplug.de/leadplug"
+          src={src}
+          scrolling="no"
           style={{ width: "100%", border: "none", display: "block", height: "500px", overflow: "hidden" }}
           loading="lazy"
-          title="SingoTec Lead-Funnel"
+          title="LeadPlug Demo"
         />
       </div>
     </div>,

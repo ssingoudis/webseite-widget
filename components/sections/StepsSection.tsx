@@ -52,7 +52,7 @@ export default function StepsSection() {
   }, [started]);
 
   return (
-    <section id="schritte" className="py-24 px-6" ref={sectionRef}>
+    <section id="schritte" className="py-14 md:py-24 px-6" ref={sectionRef}>
       <div className="max-w-300 mx-auto">
         <div className="text-center mb-20">
           <span className="block text-[12px] font-bold uppercase tracking-[0.08em] text-primary mb-2">
