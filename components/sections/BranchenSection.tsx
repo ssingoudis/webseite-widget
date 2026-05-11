@@ -15,6 +15,7 @@ const branchen: {
   desc: string;
   status: Status;
   demoUrl?: string;
+  ctaLabel?: string;
 }[] = [
   {
     Icon: Sun,
@@ -68,6 +69,8 @@ const branchen: {
     label: "Eigene Branche",
     desc: "Deine Fragen, dein Branding — vollständig anpassbar.",
     status: "custom",
+    demoUrl: "https://app.leadplug.de/leadplug",
+    ctaLabel: "Jetzt anfragen",
   },
 ];
 
@@ -93,29 +96,32 @@ export default function BranchenSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {branchen.map(({ Icon, iconColor, iconBg, label, desc, demoUrl }) => (
+          {branchen.map(({ Icon, iconColor, iconBg, label, desc, demoUrl, ctaLabel }) => (
             <div
               key={label}
-              className="group p-6 rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-200 cursor-default select-none flex flex-col"
+              onClick={() => demoUrl && setActiveDemo(demoUrl)}
+              className={`group p-5 rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-200 select-none flex flex-col ${demoUrl ? "cursor-pointer" : "cursor-default"}`}
             >
-              <div
-                className="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
-                style={{ background: iconBg }}
-              >
-                <Icon size={20} style={{ color: iconColor }} />
+              <div className="flex items-center gap-3 mb-2">
+                <div
+                  className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
+                  style={{ background: iconBg }}
+                >
+                  <Icon size={16} style={{ color: iconColor }} />
+                </div>
+                <h4 className="text-[14px] font-semibold text-slate-900">
+                  {label}
+                </h4>
               </div>
-              <h4 className="text-[15px] font-semibold text-slate-900 mb-1.5">
-                {label}
-              </h4>
               <p className="text-[13px] leading-relaxed text-slate-500 flex-1">
                 {desc}
               </p>
               {demoUrl && (
                 <button
-                  onClick={() => setActiveDemo(demoUrl)}
-                  className="mt-4 self-start inline-flex items-center gap-1.5 text-[13px] font-semibold text-slate-700 border border-slate-200 group-hover:bg-primary-light group-hover:border-primary/20 group-hover:text-primary px-3.5 py-1.5 rounded-lg transition-all duration-150 cursor-pointer"
+                  onClick={(e) => { e.stopPropagation(); setActiveDemo(demoUrl); }}
+                  className="mt-3 self-start inline-flex items-center gap-1.5 text-[13px] font-semibold text-slate-700 border border-slate-200 group-hover:bg-primary-light group-hover:border-primary/20 group-hover:text-primary px-3.5 py-1.5 rounded-lg transition-all duration-150 cursor-pointer"
                 >
-                  Jetzt testen <ArrowRight size={14} className="transition-transform duration-150 group-hover:translate-x-0.5" />
+                  {ctaLabel ?? "Jetzt testen"} <ArrowRight size={14} className="transition-transform duration-150 group-hover:translate-x-0.5" />
                 </button>
               )}
             </div>

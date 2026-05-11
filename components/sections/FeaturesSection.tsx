@@ -4,8 +4,8 @@ import type { LucideIcon } from "lucide-react";
 const features: { icon: LucideIcon; title: string; desc: string }[] = [
   {
     icon: Zap,
-    title: "Mehr Anfragen, bessere Qualität",
-    desc: "Interaktive Formulare statt starren Kontaktformularen — Besucher klicken sich durch statt abzuspringen.",
+    title: "Mehr & bessere Anfragen",
+    desc: "Besucher klicken sich Schritt für Schritt durch statt abzuspringen.",
   },
   {
     icon: Palette,
@@ -15,12 +15,12 @@ const features: { icon: LucideIcon; title: string; desc: string }[] = [
   {
     icon: Code2,
     title: "Einfache Einbindung",
-    desc: "Dein Widget wird als iFrame eingebunden — kompatibel mit WordPress, Wix, Jimdo, Squarespace und allem anderen.",
+    desc: "Ein einzeiliger Code — funktioniert mit WordPress, Wix, Jimdo und allen anderen.",
   },
   {
     icon: Mail,
     title: "Sofort Anfragen erhalten",
-    desc: "Jede Anfrage landet strukturiert in deinem E-Mail-Postfach — mit allen Antworten auf einen Blick.",
+    desc: "Jede Anfrage landet strukturiert in deinem Postfach — alle Antworten auf einen Blick.",
   },
   {
     icon: Shield,
@@ -30,7 +30,7 @@ const features: { icon: LucideIcon; title: string; desc: string }[] = [
   {
     icon: SlidersHorizontal,
     title: "Branchenspezifisch",
-    desc: "Vorkonfigurierte Fragen für deine Branche — wir richten alles auf deinen Betrieb ein.",
+    desc: "Vorkonfigurierte Fragen für deine Branche — wir richten alles ein.",
   },
 ];
 
@@ -56,15 +56,17 @@ export default function FeaturesSection() {
             return (
               <div
                 key={item.title}
-                className="p-6 rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-200 cursor-default select-none"
+                className="p-5 rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-200 cursor-default select-none"
               >
-                <div className="w-10 h-10 rounded-lg bg-primary-light flex items-center justify-center mb-4">
-                  <Icon size={20} className="text-primary" />
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-8 h-8 rounded-lg bg-primary-light flex items-center justify-center shrink-0">
+                    <Icon size={16} className="text-primary" />
+                  </div>
+                  <h4 className="text-[14px] font-semibold text-slate-900">
+                    {item.title}
+                  </h4>
                 </div>
-                <h4 className="text-[15px] font-semibold text-slate-900 mb-1.5">
-                  {item.title}
-                </h4>
-                <p className="text-[13px] leading-relaxed text-slate-500 m-0">
+                <p className="text-[13px] leading-relaxed text-slate-500">
                   {item.desc}
                 </p>
               </div>
