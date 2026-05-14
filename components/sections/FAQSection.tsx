@@ -41,7 +41,7 @@ export default function FAQSection() {
   }
 
   return (
-    <section id="faq" className="py-14 md:py-24 px-6">
+    <section id="faq" className="py-14 md:py-24 px-6 bg-slate-50">
       <div className="max-w-180 mx-auto">
         <div className="text-center mb-12">
           <span className="block text-[12px] font-bold uppercase tracking-[0.08em] text-primary mb-2">
@@ -61,10 +61,10 @@ export default function FAQSection() {
             return (
               <div
                 key={i}
-                className={`bg-white border rounded-2xl p-6 md:px-8 mb-4 transition-all duration-300 ${
+                className={`bg-white rounded-2xl p-6 md:px-8 mb-4 transition-all duration-300 ${
                   isOpen
-                    ? "border-slate-300 shadow-md"
-                    : "border-slate-200 shadow-none"
+                    ? "shadow-[0_8px_24px_rgba(0,0,0,0.12)]"
+                    : "shadow-[0_2px_8px_rgba(0,0,0,0.06)]"
                 }`}
               >
                 <button

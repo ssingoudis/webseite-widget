@@ -36,7 +36,7 @@ const features: { icon: LucideIcon; title: string; desc: string }[] = [
 
 export default function FeaturesSection() {
   return (
-    <section id="features" className="pt-14 pb-14 md:pt-16 md:pb-24 px-6">
+    <section id="features" className="pt-14 pb-14 md:pt-16 md:pb-24 px-6 bg-slate-50">
       <div className="max-w-300 mx-auto">
         <div className="text-center mb-14">
           <span className="block text-[12px] font-bold uppercase tracking-[0.08em] text-primary mb-2">
@@ -56,7 +56,7 @@ export default function FeaturesSection() {
             return (
               <div
                 key={item.title}
-                className="p-5 rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-200 cursor-default select-none"
+                className="p-5 rounded-xl bg-white shadow-[0_2px_8px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.10)] transition-all duration-200 cursor-default select-none"
               >
                 <div className="flex items-center gap-3 mb-2">
                   <div className="w-8 h-8 rounded-lg bg-primary-light flex items-center justify-center shrink-0">

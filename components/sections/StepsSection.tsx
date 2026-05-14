@@ -90,7 +90,7 @@ export default function StepsSection() {
                     border: isActive ? "2px solid var(--color-primary)" : "1px solid var(--color-border)",
                     boxShadow: isActive
                       ? "0 4px 24px color-mix(in srgb, var(--color-primary) 25%, transparent)"
-                      : "0 2px 8px rgba(0,0,0,0.04)",
+                      : "0 2px 8px rgba(0,0,0,0.06)",
                   }}
                 >
                   <Icon

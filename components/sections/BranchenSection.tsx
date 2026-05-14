@@ -100,7 +100,7 @@ export default function BranchenSection() {
             <div
               key={label}
               onClick={() => demoUrl && setActiveDemo(demoUrl)}
-              className={`group p-5 rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-200 select-none flex flex-col ${demoUrl ? "cursor-pointer" : "cursor-default"}`}
+              className={`group p-5 rounded-xl border border-slate-100 bg-white shadow-[0_2px_8px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.10)] hover:border-slate-200 transition-all duration-200 select-none flex flex-col ${demoUrl ? "cursor-pointer" : "cursor-default"}`}
             >
               <div className="flex items-center gap-3 mb-2">
                 <div

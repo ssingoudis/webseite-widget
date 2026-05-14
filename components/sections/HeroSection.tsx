@@ -6,9 +6,8 @@ export default function HeroSection() {
   return (
     <section className="relative bg-white min-h-[clamp(500px,70vh,820px)] flex items-center justify-center overflow-hidden pt-32 pb-16 lg:pt-24 lg:pb-20">
 
-      {/* Hintergrund: Grid-Pattern + Glow */}
+      {/* Hintergrund: Glow */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-size-[24px_24px]" />
         <div className="absolute top-0 right-0 w-150 h-150 bg-primary-light/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3" />
       </div>
 
@@ -81,7 +80,7 @@ export default function HeroSection() {
           <div className="mt-8 lg:mt-0">
 
             {/* Funnel-Karte (nicht klickbar) */}
-            <div className="relative bg-white rounded-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] border border-slate-100/50 p-4 sm:p-6 z-10 mx-auto max-w-125 select-none">
+            <div className="relative bg-white rounded-2xl shadow-[0_24px_60px_-8px_rgba(0,0,0,0.16),0_8px_20px_-4px_rgba(0,0,0,0.06)] border border-slate-200/70 p-4 sm:p-6 z-10 mx-auto max-w-125 select-none">
 
               <div className="mb-4 sm:mb-6">
                 <h3 className="text-base sm:text-xl font-bold text-slate-900 text-center">
