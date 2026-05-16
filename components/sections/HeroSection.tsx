@@ -43,10 +43,10 @@ export default function HeroSection() {
                 className="w-full lg:w-auto max-w-105 lg:max-w-none inline-flex justify-center items-center gap-2 px-8 py-3.5 text-base font-bold text-white bg-primary hover:bg-primary-dark rounded-xl shadow-md transition-all"
               />
               <SmoothScrollLink
-                target="schritte"
+                target="cta"
                 className="w-full lg:w-auto max-w-105 lg:max-w-none inline-flex justify-center items-center gap-2 px-8 py-3.5 text-base font-bold text-slate-700 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm"
               >
-                So funktioniert&apos;s
+                Demo testen
                 <ArrowRight size={18} />
               </SmoothScrollLink>
             </div>

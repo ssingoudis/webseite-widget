@@ -21,7 +21,7 @@ export default function CTAWidget() {
   return (
     <iframe
       ref={iframeRef}
-      src="https://app.leadplug.de/leadplug"
+      src="https://app.leadplug.de/demo"
       style={{ width: "100%", border: "none", display: "block", height: "500px", overflow: "hidden" }}
       title="LeadPlug Demo-Widget"
     />

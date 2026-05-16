@@ -61,7 +61,13 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div>
+        <div className="flex items-center gap-3">
+          <button
+            onClick={() => smoothScrollTo("cta")}
+            className="hidden min-[420px]:inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-sm font-semibold text-primary bg-primary-light border border-primary/30 hover:bg-primary/10 transition-colors duration-150"
+          >
+            Demo testen
+          </button>
           <FunnelCTAButton
             label="Jetzt anfragen"
             className="bg-primary hover:bg-primary-dark text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-colors duration-150"
